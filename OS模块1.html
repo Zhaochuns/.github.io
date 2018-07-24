@@ -1,0 +1,272 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>豆芽菜的爱的博客</title>
+  <meta name="author" content="豆芽菜" />
+
+  
+  <meta name="description" content="男人可以不帅，但是不能不装逼，装逼很重要" />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  
+  <meta property="og:site_name" content="豆芽菜的爱的博客" />
+
+  
+  
+
+  
+    <meta property="og:image" content="" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="豆芽菜的爱的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">豆芽菜的爱的博客</a></h1>
+  <h2><a href="/">新进菜鸟一个</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="page">
+  
+  <div class="post-content">
+    <header>
+      
+      
+  
+    <h1 class="title"></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="os模块下"><a href="#os模块下" class="headerlink" title="os模块下"></a>os模块下</h1><ul>
+<li><p>os模块</p>
+</li>
+<li><p>os模块支持以下平台，他会根据平台来对应处理你调用的函数</p>
+<ul>
+<li>posix：类Unix操作 安卓 Centos ubuntu Debian</li>
+<li>nt：Win</li>
+<li>mac：MacOS<ul>
+<li>4月28号早上8点多的时候我的mac丢了</li>
+</ul>
+</li>
+<li>dos：DOS<ul>
+<li>dos必须关机 开机的阶段才能看到</li>
+</ul>
+</li>
+<li>U盘安装dos操作系统</li>
+</ul>
+</li>
+<li><p>os.name</p>
+<blockquote>
+<p>输出当前os模块在哪个平台下</p>
+</blockquote>
+</li>
+<li><p>os.getcwd() -&gt; str</p>
+<ul>
+<li>获取当前的程序工作目录</li>
+<li>工作目录：是我们程序在运行期间的时候，如果你需要和当前运行环境(操作系统)进行交互，相对路径互相参照，工作目录可以在程序运行期间修改</li>
+<li>运行目录：维护当前程序是从哪个路径下被执行的</li>
+</ul>
+</li>
+<li><p><strong>os.listdir(path=os.getcwd())</strong> -&gt; list</p>
+<ul>
+<li>返回指定path目录下的所有文件及文件夹的列表</li>
+<li>当你不传递一个路径的时候，默认的会返回当前的工作目录下的内容</li>
+<li>该函数返回的结果，不会明确什么是文件，什么是文件夹</li>
+<li>返回的结果是一个字符串列表，并且每一个路径都是<strong>相对路径</strong>的</li>
+<li>该函数也会将隐藏文件展示</li>
+</ul>
+</li>
+<li><p>os.remove(file_path) #rm </p>
+<ul>
+<li><p>删除file_path所指定的一个文件</p>
+</li>
+<li><p>如果成功返回None，失败了直接报错</p>
+</li>
+<li><p>删除的时候一定要指明文件的后缀</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">IsADirectoryError: [Errno <span class="number">21</span>] Is a directory: <span class="string">'test'</span></span><br><span class="line">删除了一个文件夹</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FileNotFoundError: [Errno <span class="number">2</span>] No such file or directory: <span class="string">'tesasdjklajdkt'</span></span><br><span class="line">删除了一个不存在的文件</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>os.rmdir(dir_path) # rm -rf</p>
+<ul>
+<li>删除dir_path指定的一个文件夹(目录)</li>
+<li>如果成功返回None，失败了直接报错</li>
+<li>无法递归删除文件夹，如果文件夹不为空，那么删除不了</li>
+</ul>
+</li>
+<li><p>os.makedirs(‘a/b/c’)</p>
+<ul>
+<li>递归创建目录</li>
+<li>可以嵌套创建目录</li>
+<li>成功返回None，失败则报错</li>
+</ul>
+</li>
+<li><p>os.mkdir(‘a’)</p>
+<ul>
+<li>创建目录</li>
+<li>不能在linux下创建一个和文件名重名的文件夹</li>
+<li>虽然类型不同，但是名字也不能是相同的</li>
+<li>成功返回None，失败则报错</li>
+</ul>
+</li>
+<li><p>os.chdir() </p>
+<ul>
+<li>在程序运行期间可以通过该函数来改变工作目录</li>
+<li>os.listdir() 这个函数可以不传递参数执行，返回当前工作目录下的所有文件及文件夹的列表</li>
+</ul>
+</li>
+</ul>
+<h2 id="os模块下还有一个子模块叫os-path"><a href="#os模块下还有一个子模块叫os-path" class="headerlink" title="os模块下还有一个子模块叫os.path"></a>os模块下还有一个子模块叫os.path</h2><blockquote>
+<p> os.path可以处理和路径及文件类型有关的问题</p>
+</blockquote>
+<ul>
+<li><p>os.path.isfile(path)  -&gt; Bool</p>
+<ul>
+<li>判断路径是否是一个真正的文件 </li>
+</ul>
+</li>
+<li><p>os.path.isdir(path)  -&gt; Bool</p>
+<ul>
+<li>判断路径是否是一个真正的目录</li>
+</ul>
+</li>
+<li><p>os.path.join(‘path’,’sub_path’)</p>
+<ul>
+<li>拼接path和sub_path</li>
+<li>可以构成绝对路径</li>
+<li>路径中重复的部分不会被去掉</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; os.path.join(<span class="string">'home'</span>,<span class="string">'home/CODE'</span>)</span><br><span class="line"><span class="string">'home/home/CODE'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>os.path.exists(path)</p>
+<ul>
+<li>判断路径是否存在</li>
+<li>如果存在返回True，反之返回False</li>
+</ul>
+</li>
+<li><p><strong>os.path.getsize(path)</strong></p>
+<ul>
+<li>返回路径对应的文件大小</li>
+<li>返回的文件大小单位为Byte</li>
+</ul>
+</li>
+</ul>
+<h1 id="作业-不允许抄，宁愿干想也不让抄"><a href="#作业-不允许抄，宁愿干想也不让抄" class="headerlink" title="作业  不允许抄，宁愿干想也不让抄"></a>作业  不允许抄，宁愿干想也不让抄</h1><p>实现统计目录下有效文件个数，</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">test/</span><br><span class="line">	/test/<span class="number">1</span>.py</span><br><span class="line">	<span class="number">1</span>.py</span><br><span class="line">	<span class="number">2</span>.py</span><br><span class="line">把所有的文件个数列举出来</span><br></pre></td></tr></table></figure>
+<p>实现一下获取文件夹大小</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">test/</span><br><span class="line">	a/</span><br><span class="line">		<span class="number">1</span> <span class="comment">#1的大小是10M</span></span><br><span class="line">	b/ </span><br><span class="line">		<span class="number">1</span> <span class="comment">#1的大小是6M</span></span><br><span class="line">		<span class="number">2</span> <span class="comment">#2的大小是5M</span></span><br><span class="line">		<span class="number">3</span> <span class="comment">#3的大小是3M</span></span><br><span class="line">文件大小大家随意放，放到目录下就性，接着统计这个文件夹占据了多少内存</span><br><span class="line">不允许使用shell命令</span><br><span class="line">如果文件夹比较大，<span class="number">182930819204</span>byte 换算成合理的单位</span><br></pre></td></tr></table></figure>
+<p>实现<strong>递归</strong>删除文件夹</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">test</span><br><span class="line">	/test1/<span class="number">1</span>.py</span><br><span class="line">	<span class="number">1</span></span><br><span class="line">	<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>把我讲过每一个函数抄一遍</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">把帮助文档翻译过来，自己好好把语言组织了</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">补充说明：</span><br><span class="line">这些功能函数留下来</span><br><span class="line">以后做运维的时候会用到</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:zhaocs.github.io">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2018/07/18/hello-world/">Hello World</a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2018 豆芽菜
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+</body>
+</html>
