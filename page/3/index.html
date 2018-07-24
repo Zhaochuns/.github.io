@@ -64,6 +64,413 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.782Z"><a href="/2018/07/24/面向对象属性探究/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/07/24/面向对象属性探究/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>#面向对象属性探究</p>
+<blockquote>
+<p>神盾局特工 闪电侠 蚁人 ：看看美剧</p>
+</blockquote>
+<ul>
+<li><p>属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Human</span>:</span></span><br><span class="line">    place = <span class="string">'地球'</span> <span class="comment">#类的变量</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        self.name = name <span class="comment">#实例的变量</span></span><br><span class="line">h1 = Human(<span class="string">'小红'</span>)</span><br><span class="line">h2 = Human(<span class="string">'小明'</span>)</span><br><span class="line"></span><br><span class="line">print(h1.name)</span><br><span class="line">print(h2.name)</span><br></pre></td></tr></table></figure>
+<p>#变量</p>
+<ul>
+<li>实例的变量：<strong>只能被实例</strong>所访问(<strong>私有</strong>)<ul>
+<li>实例的变量可以被实例所使用</li>
+<li>h1.name 实例.的方式来获取到属于实例的私有变量<ul>
+<li>属于实例的self.xxx 这样子的变量是<strong>无法通过类</strong>来直接访问的。因为这些属性需要实例化</li>
+<li>self.xxx这样子的变量 是我的实例所私有的</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>类的变量：可以被<strong>实例，类</strong>同时访问(<strong>共享</strong>)<ul>
+<li>但是：如果实例修改或者重新赋值了类的变量，那么这个变量将升级为私有的</li>
+<li>如果这个变量没有提前出现过，我也赋值定义修改了，那么也会变成这个实例独有的。</li>
+</ul>
+</li>
+<li>内部的是独立私有的，外部的是大家公用的(共享)</li>
+<li>类和实例均支持在创建之后，存活期间动态的添加新的属性<ul>
+<li>实例添加的时候，如果你只为一个单独实例添加，那么其他实例是不会有的</li>
+<li>类添加的时候，大家都有</li>
+</ul>
+</li>
+</ul>
+<h1 id="方法-函数"><a href="#方法-函数" class="headerlink" title="方法(函数)"></a>方法(函数)</h1><ul>
+<li><p>实例的方法：只能被实例所调用，而且默认实例方法第一个位置上的参数，必须传递调用实 例！</p>
+<ul>
+<li>def func(self)…</li>
+<li>xx.func 来调用一个实例函数，那么实例一定会作为第一个参数传递进来</li>
+<li>函数中的self也可以让我们方便的直接获取到属于实例的私有变量</li>
+<li>实例函数中可以访问其他实例属性：因为self来指向当前实例中的其他属性,self.other</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span> </span><br><span class="line">    tax = <span class="number">1.5</span> <span class="comment">#大家共享税的标准</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,driver)</span>:</span></span><br><span class="line">        self.name = name <span class="comment">#车的名字</span></span><br><span class="line">        self.driver = driver <span class="comment">#所有者</span></span><br><span class="line">        self.gas = <span class="number">0</span> <span class="comment">#车的油量</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span> <span class="comment"># 车子会跑</span></span><br><span class="line">        <span class="keyword">if</span> self.gas &lt;= <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">'没油不跑'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">'跑一下！'</span>)</span><br><span class="line">            self.gas = self.gas - <span class="number">10</span> <span class="comment">#跑一次少10升</span></span><br><span class="line">            print(<span class="string">'当前流量:'</span>,self.gas)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_oil</span><span class="params">(self,oil_num)</span>:</span> <span class="comment">#加油</span></span><br><span class="line">        self.gas += oil_num <span class="comment">#加到油</span></span><br><span class="line">        print(<span class="string">'加完油了:'</span>,self.gas)</span><br><span class="line">        </span><br><span class="line">c = Car(<span class="string">'Bomb Bee'</span>,<span class="string">'小蓝'</span>)</span><br><span class="line">c.add_oil(<span class="number">100</span>) <span class="comment">#加100升</span></span><br><span class="line">c.run()</span><br><span class="line"><span class="comment">#Car.run() #XXX 错误的！这里就报错了 类不可以直接使用实例的函数</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>类的方法</p>
+<ul>
+<li>类的普通函数  权限完全封闭 啥都别想看<ul>
+<li>只能被类所使用，实例访问不了这种函数</li>
+<li>不能访问类变量以及实例变量</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    place = <span class="string">'地球'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.name = <span class="string">'哈哈哈'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(cls,a,b,c,d,e)</span>:</span> <span class="comment">#函数没有任何参数</span></span><br><span class="line">    <span class="comment">#类的普通函数</span></span><br><span class="line">        print(<span class="string">"啊哈哈哈哈哈哈"</span>)</span><br><span class="line">a = A()</span><br><span class="line">a.func() <span class="comment">#普通类方法 无法被实例调用</span></span><br><span class="line">A.func() <span class="comment">#普通类方法，只能被类调用</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>类的高级函数  权限展开了类的变量访问权限<ul>
+<li>实例和类均可调用</li>
+<li><strong>可以访问属于类的变量</strong></li>
+<li>不可以访问属于实例的属性</li>
+<li>你有了cls之后，也就可以互相指向到其他类中高级函数，也就可以调用了<ul>
+<li>可以在另外一个类中高级函数调用其他类的高级函数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g_func</span><span class="params">(cls)</span>:</span> <span class="comment">#默认的必须要有一个参数，</span></span><br><span class="line">        <span class="comment">#cls参数用来指向当前的类!</span></span><br><span class="line">        print(cls.place)</span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g_func1</span><span class="params">(cls)</span>:</span> <span class="comment">#默认的必须要有一个参数，</span></span><br><span class="line">        cls.g_func()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在这里，必须为类的高级函数第一个参数约定俗称的写一个cls形参</p>
+<p>该形参用来接收使用的类</p>
+</blockquote>
+<ul>
+<li>类的静态方法：开放了实例访问函数的权限，但是变量的权限访问(访问类、实例变量)全部关闭<ul>
+<li>首先无法访问属于类的变量，没有指向当前使用类的指针</li>
+<li>实例和类均可调用</li>
+<li>不可以访问属于实例的属性</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = []</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">@staticmethod #类似与类的普通函数</span></span><br><span class="line"><span class="comment">#不需要cls这样的额外参数</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">s_func</span><span class="params">()</span>:</span></span><br><span class="line">		print(<span class="string">'哈哈哈哈哈'</span>)</span><br><span class="line">		<span class="comment">#和我类数据无关的操作</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>实例之间可以通过静态方法@staticmethod以及高级类方法@classmethod可以进行数据通信<ul>
+<li>C++里面静态方法：共享，通信</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="cls用来指向类"><a href="#cls用来指向类" class="headerlink" title="cls用来指向类"></a>cls用来指向类</h3><h3 id="self用来指向实例"><a href="#self用来指向实例" class="headerlink" title="self用来指向实例"></a>self用来指向实例</h3>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.772Z"><a href="/2018/07/24/生成器迭代器/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/07/24/生成器迭代器/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><ul>
+<li><p>迭代器：抽象的数据</p>
+<ul>
+<li><p>迭代器中包含有两个内置函数</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">__next__</span><br><span class="line">__iter__</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python3：range() 可迭代的对象</span><br><span class="line">python2：xrange()</span><br><span class="line">当你不去真正使用数据的时候，数据不会创建出来</span><br><span class="line">节约内存</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">可迭代的对象</span><br><span class="line">	<span class="number">1</span>：都可以通过<span class="keyword">for</span>循环访问</span><br><span class="line">	<span class="number">2</span>: 前一个数据可以找到后一个数据</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>迭代器访问的方式：一定是一个抽象的数据</p>
+<ul>
+<li><p>无法通过工厂函数实际化</p>
+</li>
+<li><p>可以通过for循环访问，每一次循环提取一个数据</p>
+</li>
+<li><p><strong>next</strong>函数也可以在每一次调用时返回一个迭代器里的数据</p>
+</li>
+<li><p>无法再重新生产已经生产出来的数据</p>
+</li>
+<li><p>迭代器访问完了之后就没法再次访问了</p>
+</li>
+<li><p>延时生成数据，啥时候用，啥时候用next或者for循环访问到就行。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>可迭代的对象(iterable)：可以是抽象的，也可以是具象的</li>
+</ul>
+<ul>
+<li><p>只要数据之间彼此维持了访问顺序</p>
+</li>
+<li><p>我可以通过前一个找到后一个</p>
+</li>
+<li><p>一般由链表构成，或者数组</p>
+</li>
+<li><p>dict、set无序。无法用线性表示其中顺序，树形结构本质是有顺序的</p>
+</li>
+<li><p>只要有__iter__函数，那么都可以通过iter去初始化成一个迭代器</p>
+</li>
+</ul>
+<blockquote>
+<p>可迭代的对象:</p>
+<p>​    list,str,tuple,set,dict,file,sql,range</p>
+<p>​    只需要含有__iter__函数的，都可以称作一个可迭代的对象</p>
+<p>迭代器:</p>
+<p>​    更抽象的数据，其中必须包含__next__函数，也必须包含__iter__</p>
+<p>生成器:</p>
+<p>​    高级的迭代器</p>
+</blockquote>
+<p>##无限迭代器：</p>
+<blockquote>
+<p> 无法被一次性实际化</p>
+</blockquote>
+<ul>
+<li>通过函数自动创建</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line">a = itertools.count() </span><br><span class="line">list(a) <span class="comment">#无法通过工厂函数直接实际化生产数据</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过一个序列数据来创建</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mylist = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">b = itertools.cycle(mylist)</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">count(start=<span class="number">0</span>,step=<span class="number">1</span>)  直线</span><br><span class="line">	start：数据起点</span><br><span class="line">	step：数据步长</span><br><span class="line">cycle(iterable) </span><br><span class="line">	iterable：是一个可迭代的数据</span><br></pre></td></tr></table></figure>
+<h2 id="有限迭代器"><a href="#有限迭代器" class="headerlink" title="有限迭代器"></a>有限迭代器</h2><ul>
+<li><p>iter内置函数直接升华具有__iter__内置函数的对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iter(list|str|tuple|set|dict|file|sql|range)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模块函数来生产</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> islice</span><br><span class="line">islice(iterable,stop)</span><br><span class="line">islice(iterable,start,stop,[,step])</span><br><span class="line">	取序列的一定范围来创建迭代器</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>只要是一个可迭代的对象，是不是都可以变成迭代器，然后用next来访问</p>
+</li>
+</ul>
+<ul>
+<li><p>for：一定访问的是一个可迭代的对象</p>
+<ul>
+<li>__iter__：检查数据是否是一个可迭代的</li>
+<li>iter()：将可迭代数据升华成为一个迭代器</li>
+<li>next()：每一次for循环都是调用一次next</li>
+<li>for循环的结束其实是捕捉到了StopIteration异常</li>
+</ul>
+</li>
+</ul>
+<h1 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h1><ul>
+<li><p>生成器也是迭代器，只不过是特殊的迭代器</p>
+</li>
+<li><p>生成器创建出来就是直接可以用的</p>
+</li>
+<li><p>元组推导式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">不需要手动维护iter和next函数</span><br><span class="line">gen = (var for var in range(10))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数实现生成器</p>
+<ul>
+<li>yield语句可以在函数内部替换return语句实现生成器</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yield</span><br><span class="line">	返回结果</span><br><span class="line">	暂停函数</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line">	返回结果</span><br><span class="line">	终止函数</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.760Z"><a href="/2018/07/24/时间模块/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/07/24/时间模块/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="时间模块"><a href="#时间模块" class="headerlink" title="时间模块"></a>时间模块</h1><h2 id="time模块-处理精确的秒数较多"><a href="#time模块-处理精确的秒数较多" class="headerlink" title="time模块  处理精确的秒数较多"></a>time模块  处理精确的秒数较多</h2><ul>
+<li><p>时间获取</p>
+</li>
+<li><p>获取精确秒数 </p>
+</li>
+<li><p>时间字符串展示转换</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>time.time()</strong>  -&gt; float_time</p>
+<ul>
+<li>linux时间：从1970年1月1日， 00:00:00</li>
+<li>获取从Unix时间到现在经过的秒数 -&gt; 浮点数</li>
+</ul>
+</li>
+<li><p>time.localtime(float_time)  -&gt; 时间元组</p>
+<ul>
+<li><p>如果不传递参数，那么默认返回本地时间的一个时间元组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">res = time.localtime() -&gt; 时间结果是具备时区的</span><br><span class="line">time.struct_time(</span><br><span class="line">tm_year=2018,  年</span><br><span class="line">tm_mon=6,  月</span><br><span class="line">tm_mday=9,  日</span><br><span class="line">tm_hour=10,  时</span><br><span class="line">tm_min=17,  分</span><br><span class="line">tm_sec=9,  秒</span><br><span class="line">tm_wday=5,  星期几  星期一数字是0 从0开始 表示星期几</span><br><span class="line">tm_yday=160,  今年第几天</span><br><span class="line">tm_isdst=0  夏令时</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">res.tm_year</span><br><span class="line">res.mon</span><br><span class="line">通过返回值的内置属性来获取到对应的值</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>time.sleep(seconds)</p>
+<ul>
+<li>程序休眠，让程序挂起</li>
+<li>seconds参数是一个秒数</li>
+</ul>
+</li>
+<li><p>time.clock()  一般衡量程序的耗时</p>
+<ul>
+<li>win：<ul>
+<li>第一次调用：返回当前的CPU时间</li>
+<li>第二次调用：返回距离上一次调用所花费的时间</li>
+</ul>
+</li>
+<li>linux：<ul>
+<li>直接返回程序运行到执行这个函数所花费的时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>time.asctime(时间元组)</p>
+<ul>
+<li>time.localtime(float_time)  -&gt; 时间元组</li>
+<li>处理时间元组成为一个可读性更好的字符串</li>
+</ul>
+</li>
+<li><p><strong>time.strftime</strong>(格式，时间元组)  -&gt; 良好可读性的字符串</p>
+<ul>
+<li>将时间元组根据你指定的格式来成为一个良好可读性的字符串</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">%Y: 年份 Year</span><br><span class="line">%m: 月份 month</span><br><span class="line">%d: 天数 day</span><br><span class="line"><span class="comment">#年月日，时分秒中，只有月和天是小写的，其他都是大写的</span></span><br><span class="line">%H：时 Hour</span><br><span class="line">%M：分 Minute</span><br><span class="line">%S：秒 Seconds</span><br><span class="line"><span class="comment">#以上六个死记硬背</span></span><br><span class="line"><span class="string">'%Y-%m-%d %H:%M:%S'</span></span><br><span class="line"></span><br><span class="line">%x 月/日/年</span><br><span class="line">%A: 星期的全称英语</span><br><span class="line">%a：星期的缩写英语</span><br><span class="line"></span><br><span class="line">%F 年/月/日</span><br><span class="line">%T 时/分/秒</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>time.strptime</strong>(良好可读性的字符串，格式) -&gt; 时间元组<ul>
+<li>把一个字符串变成时间元组。</li>
+<li>再变回去的时候，要和之前变化的时候一一对应。</li>
+</ul>
+</li>
+<li>strf  将时间元组变成字符串</li>
+<li>strp 将字符串变成时间元组</li>
+<li>时间元组用来被处理，时间字符串只是一个展示的</li>
+</ul>
+<p>##datetime模块</p>
+<ul>
+<li>处理年月日，时分秒的时间创建</li>
+<li>时间差值计算</li>
+<li>时间获取</li>
+</ul>
+<ul>
+<li><p>datetime.datetime</p>
+<ul>
+<li><p>处理年月日，时分秒的</p>
+</li>
+<li><p><strong>datetime.datetime.now()</strong></p>
+</li>
+<li><p>datetime.datetime.today()</p>
+<ul>
+<li>获取当前的时间</li>
+<li>返回值：datetime.datetime类型</li>
+<li>返回值类型支持差值运算，用来求出两个时间区间的秒数，或者说你指定的时间单位</li>
+</ul>
+</li>
+<li><p><strong>datetime.timedelta</strong>(days=99999999,hours=23,minutes=59,seconds=59,)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>我想求出再过20天是啥时候</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; de = datetime.timedelta(days=25)</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; now = datetime.datetime.now()</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; now + de </span><br><span class="line">datetime.datetime(2018, 7, 4, 11, 20, 2, 286059)</span><br><span class="line"><span class="meta">#</span>结果中，会自动把天数，月数向上换算</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>datetime.date</p>
+<ul>
+<li>处理年月日</li>
+<li>datetime.date.today()<ul>
+<li>年月日返回当前时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>datetime.time</p>
+<ul>
+<li>只能处理时分秒</li>
+<li>多用来创建时分秒的时间</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datetime.time(<span class="number">10</span>,<span class="number">50</span>,<span class="number">59</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">创建时间</span><br><span class="line">datetime.datetime(<span class="number">2018</span>,<span class="number">6</span>,<span class="number">6</span>,<span class="number">10</span>,<span class="number">10</span>,<span class="number">59</span>) 创建年月日，时分秒</span><br><span class="line">datetime.date(<span class="number">2018</span>,<span class="number">6</span>,<span class="number">6</span>) 创建年月日</span><br><span class="line">datetime.time(<span class="number">10</span>,<span class="number">50</span>,<span class="number">59</span>) 创建时分秒</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">关于这些返回值，我们都可以通过它的内置属性：</span><br><span class="line">res.year 年</span><br><span class="line">res.month 月</span><br><span class="line">res.day 日</span><br><span class="line">res.hour 时</span><br><span class="line">res.minute 分</span><br><span class="line">res.second 秒</span><br><span class="line">res.weekday() 从0开始表示星期几</span><br><span class="line">res.ctime() 返回时间字符串(国际化处理过的)</span><br><span class="line">res.timetuple() 一个时间元组 </span><br><span class="line">和time.localtime() 所获取到的返回值是一样的</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2018-07-24T06:52:53.756Z"><a href="/2018/07/24/数据类型转换/">2018-07-24</a></time>
       
       
@@ -212,420 +619,11 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2018-07-24T06:52:53.716Z"><a href="/2018/07/24/文件操作/">2018-07-24</a></time>
+        <time datetime="2018-07-24T04:58:41.907Z"><a href="/2018/07/24/OS模块2/">2018-07-24</a></time>
       
       
   
-    <h1 class="title"><a href="/2018/07/24/文件操作/"></a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><ul>
-<li>普通文本文件操作</li>
-</ul>
-<blockquote>
-<p>os.rename() os模块重命名文件</p>
-<p>.xml .xml.bak .ini .ini.bak</p>
-</blockquote>
-<p>文件系统：NTFS EXT3 EXT4 XFS FAT32</p>
-<p>​    表明了路径的长度，255个字符</p>
-<p>​    单文件的最大大小</p>
-<p>​    文件夹下的文件个数</p>
-<p>操作系统：</p>
-<p>​    平台</p>
-<ul>
-<li><p>文件在哪里？</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">所有的文件都是在磁盘上的！</span><br><span class="line">CPU只能处理在内存中的数据，也就是说，CPU无法直接去阅读磁盘里的文件</span><br><span class="line">CPU &lt;-&gt; MEM &lt;-&gt; DISK</span><br><span class="line"></span><br><span class="line">离CPU越快处理速度越快</span><br><span class="line">	南桥 和IO设备 慢一些</span><br><span class="line">	北桥 和CPU通信  更快</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>文件操作，在程序里都是对内存中的文件进行操作！</p>
-<ul>
-<li><p>创建文件</p>
-</li>
-<li><p>第一步：打开文件</p>
-<blockquote>
-<p>把磁盘中的文件拿到内存中</p>
-</blockquote>
-<ul>
-<li><p>fp = open(path, mode=’r’)</p>
-<ul>
-<li><p>path: 需要打开文件的路径</p>
-</li>
-<li><p>mode: 打开文件所使用的权限</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">读：r read</span><br><span class="line">	提供读操作	</span><br><span class="line">	单纯的读权限打开不存在文件，会直接报错</span><br><span class="line">写：w write</span><br><span class="line">	提供写操作</span><br><span class="line">追加：a append</span><br><span class="line">	类似与写权限，只提供对于文件的写操作</span><br><span class="line">在权限参数的传递过程中，如果只是单纯的给了一个权限，那么其他权限不享有</span><br><span class="line">如果我读写兼备，那么只需要在权限补充一个+号</span><br><span class="line">r+</span><br><span class="line">w+ </span><br><span class="line">a+</span><br></pre></td></tr></table></figure>
-<ul>
-<li>写文件：配置文件，日志</li>
-<li>读文件：音频文件，video，img</li>
-</ul>
-</li>
-<li><p>文本文件是即可以读，也可以写</p>
-</li>
-<li><p>open函数返回的是一个文件的句柄</p>
-</li>
-<li><p>（不是完全的文件展开体，只是一个可以导出整个文件的头指针）</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>第二步：</p>
-<ul>
-<li><p>读</p>
-<ul>
-<li><p>fp.read(num)</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">函数直接阅读整个文件，并返回整个文件为一个字符串</span><br><span class="line">把整个文件读到了内存</span><br><span class="line">如果给read函数传递了num变量</span><br><span class="line">那么他是通过num来读取对应文件中的指定字符个数</span><br><span class="line">read函数获取到的文件内容会保留行末尾的\n\r</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>fp.readline()</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">readline函数一次可以读取文件中的一行内容</span><br><span class="line">当遇到了\n\r则停止，代表当前是一行了</span><br><span class="line">当遇到了EOF（文件结束标志）</span><br><span class="line">readline如果去读取超过文件本身行数的次数，那么不会报错，只会返回空</span><br><span class="line">readline不会一次性把整个文件展开在内存</span><br><span class="line">但是需要我们手动的维护行数</span><br><span class="line">readline函数在获取到文件内容的每一行后，也会保留结尾的\r\n</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">now_index = <span class="number">0</span></span><br><span class="line">perv_index = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    print(fp.readline())</span><br><span class="line">    perv_index = now_index <span class="comment">#上次的index值先保留一下</span></span><br><span class="line">    now_index = fp.tell() <span class="comment">#这一次访问到的文件index是fp.tell()</span></span><br><span class="line">    <span class="keyword">if</span> perv_index == now_index:</span><br><span class="line">        print(<span class="string">'上一次和这一次的文件读写指针位置是一样的.'</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    res = fp.readline()</span><br><span class="line">    <span class="keyword">if</span> res == <span class="string">''</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    print(res)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>  * fp.readlines()
-
-    <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">返回了字符串列表</span><br><span class="line">列表中每一个元素都是一行的数据</span><br><span class="line">并且保留行末尾的换行符号</span><br></pre></td></tr></table></figure>
-
-
-
-* 写
-</code></pre><ul>
-<li><p>Python中自动维护了一个叫做读写指针的东西</p>
-<ul>
-<li>这个读写指针会自动的根据你访问文件的量来进行向后移动</li>
-</ul>
-</li>
-<li><p>关闭文件</p>
-<ul>
-<li>fp.close()  </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">操作系统对于</span><br><span class="line">一个进程</span><br><span class="line">当前的操作系统</span><br><span class="line">	对于当前打开的最大文件数字是有要求的，维护文件句柄（读写指针，文件权限，打开者的用户是谁）</span><br><span class="line">进程 PID 65535</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>获取文件读写指针位置</p>
-<ul>
-<li>fp.tell()</li>
-</ul>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">获取文件读写指针的位置</span><br><span class="line">返回值获取到的是读写指针的字节数位置</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>with as</strong>语句可以自动帮助你做资源的创建及释放</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'1'</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    <span class="comment">#打开文件1，并且讲打开的文件句柄保存成fp</span></span><br><span class="line">    <span class="comment">#as 也叫做起别名</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">'hello world'</span>)</span><br><span class="line">    fp.read()</span><br><span class="line">print(<span class="string">'123'</span>)</span><br><span class="line"><span class="comment">#当你离开了with as的缩进语句</span></span><br><span class="line">    <span class="comment">#文件自动关闭</span></span><br><span class="line"><span class="comment">#上下文管理语句：</span></span><br><span class="line">    <span class="comment">#打开  关闭</span></span><br><span class="line">    <span class="comment">#穿上  脱下</span></span><br><span class="line">    <span class="comment">#起床  睡觉</span></span><br><span class="line">    <span class="comment">#发散到生活</span></span><br><span class="line"><span class="comment">#with as语句会自动帮你做资源的释放</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#lambda 函数 适宜用来 编写简单函数</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="字符串的字符数"><a href="#字符串的字符数" class="headerlink" title="字符串的字符数"></a>字符串的字符数</h3><blockquote>
-<p>你好  2个， 数个数的</p>
-</blockquote>
-<blockquote>
-<p>abc   3个，数个数</p>
-</blockquote>
-<h3 id="字符串的字节数"><a href="#字符串的字节数" class="headerlink" title="字符串的字节数"></a>字符串的字节数</h3><blockquote>
-<p>你好 4+ </p>
-<p>abc  3 </p>
-</blockquote>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-07-24T06:52:53.711Z"><a href="/2018/07/24/文件操作1/">2018-07-24</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/07/24/文件操作1/"></a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><ul>
-<li>普通文本文件操作</li>
-</ul>
-<blockquote>
-<p>os.rename() os模块重命名文件</p>
-<p>.xml .xml.bak .ini .ini.bak</p>
-</blockquote>
-<p>文件系统：NTFS EXT3 EXT4 XFS FAT32</p>
-<p>​    表明了路径的长度，255个字符</p>
-<p>​    单文件的最大大小</p>
-<p>​    文件夹下的文件个数</p>
-<p>操作系统：</p>
-<p>​    平台</p>
-<ul>
-<li><p>文件在哪里？</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">所有的文件都是在磁盘上的！</span><br><span class="line">CPU只能处理在内存中的数据，也就是说，CPU无法直接去阅读磁盘里的文件</span><br><span class="line">CPU &lt;-&gt; MEM &lt;-&gt; DISK</span><br><span class="line"></span><br><span class="line">离CPU越快处理速度越快</span><br><span class="line">	南桥 和IO设备 慢一些</span><br><span class="line">	北桥 和CPU通信  更快</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>文件操作，在程序里都是对内存中的文件进行操作！</p>
-<ul>
-<li><p>创建文件</p>
-</li>
-<li><p>第一步：打开文件</p>
-<blockquote>
-<p>把磁盘中的文件拿到内存中</p>
-</blockquote>
-<ul>
-<li><p>fp = open(path, mode=’r’)</p>
-<ul>
-<li><p>path: 需要打开文件的路径</p>
-</li>
-<li><p>mode: 打开文件所使用的权限</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">读：r read</span><br><span class="line">	提供读操作	</span><br><span class="line">	单纯的读权限打开不存在文件，会直接报错</span><br><span class="line">写：w write</span><br><span class="line">	提供写操作</span><br><span class="line">追加：a append</span><br><span class="line">	类似与写权限，只提供对于文件的写操作</span><br><span class="line">在权限参数的传递过程中，如果只是单纯的给了一个权限，那么其他权限不享有</span><br><span class="line">如果我读写兼备，那么只需要在权限补充一个+号</span><br><span class="line">r+</span><br><span class="line">w+ </span><br><span class="line">a+</span><br></pre></td></tr></table></figure>
-<ul>
-<li>写文件：配置文件，日志</li>
-<li>读文件：音频文件，video，img</li>
-</ul>
-</li>
-<li><p>文本文件是即可以读，也可以写</p>
-</li>
-<li><p>open函数返回的是一个文件的句柄</p>
-</li>
-<li><p>（不是完全的文件展开体，只是一个可以导出整个文件的头指针）</p>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>第二步：</p>
-<ul>
-<li><p>读</p>
-<ul>
-<li><p>fp.read(num)</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">函数直接阅读整个文件，并返回整个文件为一个字符串</span><br><span class="line">把整个文件读到了内存</span><br><span class="line">如果给read函数传递了num变量</span><br><span class="line">那么他是通过num来读取对应文件中的指定字符个数</span><br><span class="line">read函数获取到的文件内容会保留行末尾的\n\r</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>fp.readline()</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">readline函数一次可以读取文件中的一行内容</span><br><span class="line">当遇到了\n\r则停止，代表当前是一行了</span><br><span class="line">当遇到了EOF（文件结束标志）</span><br><span class="line">readline如果去读取超过文件本身行数的次数，那么不会报错，只会返回空</span><br><span class="line">readline不会一次性把整个文件展开在内存</span><br><span class="line">但是需要我们手动的维护行数</span><br><span class="line">readline函数在获取到文件内容的每一行后，也会保留结尾的\r\n</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">now_index = <span class="number">0</span></span><br><span class="line">perv_index = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    print(fp.readline())</span><br><span class="line">    perv_index = now_index <span class="comment">#上次的index值先保留一下</span></span><br><span class="line">    now_index = fp.tell() <span class="comment">#这一次访问到的文件index是fp.tell()</span></span><br><span class="line">    <span class="keyword">if</span> perv_index == now_index:</span><br><span class="line">        print(<span class="string">'上一次和这一次的文件读写指针位置是一样的.'</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    res = fp.readline()</span><br><span class="line">    <span class="keyword">if</span> res == <span class="string">''</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    print(res)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>  * fp.readlines()
-
-    <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">返回了字符串列表</span><br><span class="line">列表中每一个元素都是一行的数据</span><br><span class="line">并且保留行末尾的换行符号</span><br></pre></td></tr></table></figure>
-
-
-
-* 写
-</code></pre><ul>
-<li><p>Python中自动维护了一个叫做读写指针的东西</p>
-<ul>
-<li>这个读写指针会自动的根据你访问文件的量来进行向后移动</li>
-</ul>
-</li>
-<li><p>关闭文件</p>
-<ul>
-<li>fp.close()  </li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">操作系统对于</span><br><span class="line">一个进程</span><br><span class="line">当前的操作系统</span><br><span class="line">	对于当前打开的最大文件数字是有要求的，维护文件句柄（读写指针，文件权限，打开者的用户是谁）</span><br><span class="line">进程 PID 65535</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>获取文件读写指针位置</p>
-<ul>
-<li>fp.tell()</li>
-</ul>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">获取文件读写指针的位置</span><br><span class="line">返回值获取到的是读写指针的字节数位置</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><strong>with as</strong>语句可以自动帮助你做资源的创建及释放</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'1'</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    <span class="comment">#打开文件1，并且讲打开的文件句柄保存成fp</span></span><br><span class="line">    <span class="comment">#as 也叫做起别名</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">'hello world'</span>)</span><br><span class="line">    fp.read()</span><br><span class="line">print(<span class="string">'123'</span>)</span><br><span class="line"><span class="comment">#当你离开了with as的缩进语句</span></span><br><span class="line">    <span class="comment">#文件自动关闭</span></span><br><span class="line"><span class="comment">#上下文管理语句：</span></span><br><span class="line">    <span class="comment">#打开  关闭</span></span><br><span class="line">    <span class="comment">#穿上  脱下</span></span><br><span class="line">    <span class="comment">#起床  睡觉</span></span><br><span class="line">    <span class="comment">#发散到生活</span></span><br><span class="line"><span class="comment">#with as语句会自动帮你做资源的释放</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#lambda 函数 适宜用来 编写简单函数</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="字符串的字符数"><a href="#字符串的字符数" class="headerlink" title="字符串的字符数"></a>字符串的字符数</h3><blockquote>
-<p>你好  2个， 数个数的</p>
-</blockquote>
-<blockquote>
-<p>abc   3个，数个数</p>
-</blockquote>
-<h3 id="字符串的字节数"><a href="#字符串的字节数" class="headerlink" title="字符串的字节数"></a>字符串的字节数</h3><blockquote>
-<p>你好 4+ </p>
-<p>abc  3 </p>
-</blockquote>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-07-24T06:52:53.568Z"><a href="/2018/07/24/文件操作2/">2018-07-24</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/07/24/文件操作2/"></a></h1>
-  
-
-    </header>
-    <div class="entry">
-      
-        <h1 id="文件操作下"><a href="#文件操作下" class="headerlink" title="文件操作下"></a>文件操作下</h1><h1 id="每一次对文件的访问都是访问磁盘中的"><a href="#每一次对文件的访问都是访问磁盘中的" class="headerlink" title="每一次对文件的访问都是访问磁盘中的"></a>每一次对文件的访问都是访问磁盘中的</h1><blockquote>
-<p>fp  = open() -&gt; 返回了一个文件句柄</p>
-<p>​ r：读文件</p>
-<blockquote>
-<p>read(字符数)  split(‘\n’)</p>
-<p>readline()  </p>
-<p>readlines()  返回了一个文件中的字符串列表，以一行行的格式存储，那么这里列表就是每一行</p>
-<p>fp.close()  关闭文件句柄 释放资源  Linux下面一个进程能打开的最大文件数是有上限的</p>
-</blockquote>
-</blockquote>
-<p>​    当你的程序结束的时候，进程就没了，那么进程所</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">with open(<span class="string">'1.txt'</span>,<span class="string">'w'</span>) as fp:</span><br><span class="line">	<span class="keyword">for</span> var <span class="keyword">in</span> range(<span class="number">10000</span>):</span><br><span class="line">		fp.write(var)</span><br><span class="line">		</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> range(<span class="number">10000</span>):	</span><br><span class="line">	fp = open(<span class="string">'1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">	write(<span class="string">'var'</span>) <span class="comment">#打开了一万次文件</span></span><br><span class="line">	<span class="comment">#fp.close()</span></span><br><span class="line"><span class="comment">#我每一次打开了之后 我下次又会重新覆盖了之前的fp文件对象</span></span><br><span class="line"><span class="comment">#每一次都使用一个新的</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><p>写文件：读写公用同一个指针</p>
-<ul>
-<li>w：write 改权限可以让我们打开一个文件，进行写入，但是每一次打开都会将之前的文件内容清空<ul>
-<li>w可以清空文件</li>
-</ul>
-</li>
-<li>a：append 追加，读写指针在文件末尾</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fp.write(str) -&gt; 成功写入缓冲区中的字符数</span><br><span class="line">	用来向文件写入str</span><br><span class="line">	write函数在写入文件内容的时候，不会自动的带换行\r\n</span><br><span class="line">fp.writelines(str_lines) -&gt; 成功时返回None，反之则报错</span><br><span class="line">	用来向文件写入字符串列表</span><br><span class="line">	而且列表中的每一个字符串数据不会自动加换行</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li><p>缓冲区( 内存(临时) )  针对读写文件 </p>
-<ul>
-<li>保护设备</li>
-<li>让效率慢的和效率快的组件之间可以协同工作，缓和速度之间的矛盾</li>
-</ul>
-<p>磁盘的寿命由什么决定：写次数</p>
-<ul>
-<li>当你关闭文件的时候，缓冲区中的内容会刷新到磁盘上</li>
-<li>手动刷新缓冲区：fp.flush()</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 磁盘是保存数据的</span><br><span class="line">- 内存是流通数据的</span><br><span class="line">- CPU才是真正计算数据的</span><br><span class="line">- CPU处理内存中的数据，而内存中的数据来自于磁盘</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>缓存：为了提高数据流通速度</p>
-<p>缓存是在CPU里有</p>
-<p>缓存是一块超级告诉的数据流通空间（类似内存），但是太贵了，所以电脑上缓存空间一般不大</p>
-<p>L1：CPU经常从L1中拿取数据、控制线程和进程</p>
-<p>L2：存储数据</p>
-<p>L3：管控内存</p>
-</li>
-<li><p>读写指针修改：fp.seek() </p>
-<ul>
-<li>Python中文件读写指针共享 </li>
-</ul>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fp.seek(offset,when)</span><br><span class="line">offset：偏移量</span><br><span class="line">	字节为单位</span><br><span class="line">when: 从哪里开始移动</span><br><span class="line">	<span class="number">0</span>:文件开头</span><br><span class="line">	<span class="number">1</span>:当前位置</span><br><span class="line">	<span class="number">2</span>:文件末尾</span><br><span class="line">a模式下的文件末尾读写指针如何移动到文件头部呢？</span><br><span class="line">fp.seek(<span class="number">0</span>,<span class="number">0</span>) -&gt; 回到了文件开头</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>读写指针位置获取：fp.tell()</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fp.tell()</span><br><span class="line">	返回的也是一个字节单位</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>权限的总结</p>
-<ul>
-<li>r+</li>
-<li>w+</li>
-<li>a+</li>
-</ul>
-<blockquote>
-<p>当你对权限具备加号，那么它将补充没有的权限</p>
-</blockquote>
-<ul>
-<li>rb</li>
-<li>wb</li>
-<li>ab</li>
-</ul>
-<blockquote>
-<p>分别以二进制权限打开文件，一般处理：图像，音频，视频</p>
-</blockquote>
-</li>
-<li><p>不同权限下读写指针位置：</p>
-<ul>
-<li>r: 文件开头</li>
-<li>w: 文件开头</li>
-<li>a: 文件末尾</li>
-</ul>
-</li>
-</ul>
-<p>打开文本文件时它会自动识别并剔除BOM </p>
-
-      
-    </div>
-    
-    <footer>
-        <div class="alignright">
-          
-          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
-        </div>
-        
-        
-        <!-- partial('post/share') -->
-      <div class="clearfix"></div>
-    </footer>
-  </div>
-</article>
-
-
-
-
-
-  <article class="post">
-  
-  <div class="post-content">
-    <header>
-      
-        <div class="icon"></div>
-        <time datetime="2018-07-24T04:58:41.907Z"><a href="/2018/07/24/OS模块1/">2018-07-24</a></time>
-      
-      
-  
-    <h1 class="title"><a href="/2018/07/24/OS模块1/"></a></h1>
+    <h1 class="title"><a href="/2018/07/24/OS模块2/"></a></h1>
   
 
     </header>
@@ -782,11 +780,11 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2018-07-24T04:58:41.907Z"><a href="/2018/07/24/OS模块2/">2018-07-24</a></time>
+        <time datetime="2018-07-24T04:58:41.907Z"><a href="/2018/07/24/OS模块1/">2018-07-24</a></time>
       
       
   
-    <h1 class="title"><a href="/2018/07/24/OS模块2/"></a></h1>
+    <h1 class="title"><a href="/2018/07/24/OS模块1/"></a></h1>
   
 
     </header>
@@ -1017,23 +1015,23 @@
   <ul class="entry">
     
       <li>
-        <a href="/2018/07/24/异常捕获/"></a>
+        <a href="/2018/07/24/Python函数/匿名函数/"></a>
       </li>
     
       <li>
-        <a href="/2018/07/24/运算符操作符/"></a>
+        <a href="/2018/07/24/Python函数/函数语句/"></a>
       </li>
     
       <li>
-        <a href="/2018/07/24/装饰器/"></a>
+        <a href="/2018/07/24/Python函数/函数构成及作用域/"></a>
       </li>
     
       <li>
-        <a href="/2018/07/24/csv文件操作/"></a>
+        <a href="/2018/07/24/Python函数/函数作用域/"></a>
       </li>
     
       <li>
-        <a href="/2018/07/24/Python3_基础语法/"></a>
+        <a href="/2018/07/24/文件操作/文件操作1/"></a>
       </li>
     
   </ul>
