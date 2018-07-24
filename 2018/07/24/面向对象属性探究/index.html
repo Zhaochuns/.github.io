@@ -1,0 +1,254 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>豆芽菜的爱的博客</title>
+  <meta name="author" content="豆芽菜" />
+
+  
+  <meta name="description" content="男人可以不帅，但是不能不装逼，装逼很重要" />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  
+  <meta property="og:site_name" content="豆芽菜的爱的博客" />
+
+  
+  
+
+  
+    <meta property="og:image" content="" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="豆芽菜的爱的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">豆芽菜的爱的博客</a></h1>
+  <h2><a href="/">新进菜鸟一个</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.782Z"><a href="/2018/07/24/面向对象属性探究/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>#面向对象属性探究</p>
+<blockquote>
+<p>神盾局特工 闪电侠 蚁人 ：看看美剧</p>
+</blockquote>
+<ul>
+<li><p>属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Human</span>:</span></span><br><span class="line">    place = <span class="string">'地球'</span> <span class="comment">#类的变量</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        self.name = name <span class="comment">#实例的变量</span></span><br><span class="line">h1 = Human(<span class="string">'小红'</span>)</span><br><span class="line">h2 = Human(<span class="string">'小明'</span>)</span><br><span class="line"></span><br><span class="line">print(h1.name)</span><br><span class="line">print(h2.name)</span><br></pre></td></tr></table></figure>
+<p>#变量</p>
+<ul>
+<li>实例的变量：<strong>只能被实例</strong>所访问(<strong>私有</strong>)<ul>
+<li>实例的变量可以被实例所使用</li>
+<li>h1.name 实例.的方式来获取到属于实例的私有变量<ul>
+<li>属于实例的self.xxx 这样子的变量是<strong>无法通过类</strong>来直接访问的。因为这些属性需要实例化</li>
+<li>self.xxx这样子的变量 是我的实例所私有的</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>类的变量：可以被<strong>实例，类</strong>同时访问(<strong>共享</strong>)<ul>
+<li>但是：如果实例修改或者重新赋值了类的变量，那么这个变量将升级为私有的</li>
+<li>如果这个变量没有提前出现过，我也赋值定义修改了，那么也会变成这个实例独有的。</li>
+</ul>
+</li>
+<li>内部的是独立私有的，外部的是大家公用的(共享)</li>
+<li>类和实例均支持在创建之后，存活期间动态的添加新的属性<ul>
+<li>实例添加的时候，如果你只为一个单独实例添加，那么其他实例是不会有的</li>
+<li>类添加的时候，大家都有</li>
+</ul>
+</li>
+</ul>
+<h1 id="方法-函数"><a href="#方法-函数" class="headerlink" title="方法(函数)"></a>方法(函数)</h1><ul>
+<li><p>实例的方法：只能被实例所调用，而且默认实例方法第一个位置上的参数，必须传递调用实 例！</p>
+<ul>
+<li>def func(self)…</li>
+<li>xx.func 来调用一个实例函数，那么实例一定会作为第一个参数传递进来</li>
+<li>函数中的self也可以让我们方便的直接获取到属于实例的私有变量</li>
+<li>实例函数中可以访问其他实例属性：因为self来指向当前实例中的其他属性,self.other</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span> </span><br><span class="line">    tax = <span class="number">1.5</span> <span class="comment">#大家共享税的标准</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,driver)</span>:</span></span><br><span class="line">        self.name = name <span class="comment">#车的名字</span></span><br><span class="line">        self.driver = driver <span class="comment">#所有者</span></span><br><span class="line">        self.gas = <span class="number">0</span> <span class="comment">#车的油量</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span> <span class="comment"># 车子会跑</span></span><br><span class="line">        <span class="keyword">if</span> self.gas &lt;= <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">'没油不跑'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">'跑一下！'</span>)</span><br><span class="line">            self.gas = self.gas - <span class="number">10</span> <span class="comment">#跑一次少10升</span></span><br><span class="line">            print(<span class="string">'当前流量:'</span>,self.gas)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_oil</span><span class="params">(self,oil_num)</span>:</span> <span class="comment">#加油</span></span><br><span class="line">        self.gas += oil_num <span class="comment">#加到油</span></span><br><span class="line">        print(<span class="string">'加完油了:'</span>,self.gas)</span><br><span class="line">        </span><br><span class="line">c = Car(<span class="string">'Bomb Bee'</span>,<span class="string">'小蓝'</span>)</span><br><span class="line">c.add_oil(<span class="number">100</span>) <span class="comment">#加100升</span></span><br><span class="line">c.run()</span><br><span class="line"><span class="comment">#Car.run() #XXX 错误的！这里就报错了 类不可以直接使用实例的函数</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>类的方法</p>
+<ul>
+<li>类的普通函数  权限完全封闭 啥都别想看<ul>
+<li>只能被类所使用，实例访问不了这种函数</li>
+<li>不能访问类变量以及实例变量</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    place = <span class="string">'地球'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.name = <span class="string">'哈哈哈'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(cls,a,b,c,d,e)</span>:</span> <span class="comment">#函数没有任何参数</span></span><br><span class="line">    <span class="comment">#类的普通函数</span></span><br><span class="line">        print(<span class="string">"啊哈哈哈哈哈哈"</span>)</span><br><span class="line">a = A()</span><br><span class="line">a.func() <span class="comment">#普通类方法 无法被实例调用</span></span><br><span class="line">A.func() <span class="comment">#普通类方法，只能被类调用</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>类的高级函数  权限展开了类的变量访问权限<ul>
+<li>实例和类均可调用</li>
+<li><strong>可以访问属于类的变量</strong></li>
+<li>不可以访问属于实例的属性</li>
+<li>你有了cls之后，也就可以互相指向到其他类中高级函数，也就可以调用了<ul>
+<li>可以在另外一个类中高级函数调用其他类的高级函数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g_func</span><span class="params">(cls)</span>:</span> <span class="comment">#默认的必须要有一个参数，</span></span><br><span class="line">        <span class="comment">#cls参数用来指向当前的类!</span></span><br><span class="line">        print(cls.place)</span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g_func1</span><span class="params">(cls)</span>:</span> <span class="comment">#默认的必须要有一个参数，</span></span><br><span class="line">        cls.g_func()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在这里，必须为类的高级函数第一个参数约定俗称的写一个cls形参</p>
+<p>该形参用来接收使用的类</p>
+</blockquote>
+<ul>
+<li>类的静态方法：开放了实例访问函数的权限，但是变量的权限访问(访问类、实例变量)全部关闭<ul>
+<li>首先无法访问属于类的变量，没有指向当前使用类的指针</li>
+<li>实例和类均可调用</li>
+<li>不可以访问属于实例的属性</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = []</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">@staticmethod #类似与类的普通函数</span></span><br><span class="line"><span class="comment">#不需要cls这样的额外参数</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">s_func</span><span class="params">()</span>:</span></span><br><span class="line">		print(<span class="string">'哈哈哈哈哈'</span>)</span><br><span class="line">		<span class="comment">#和我类数据无关的操作</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>实例之间可以通过静态方法@staticmethod以及高级类方法@classmethod可以进行数据通信<ul>
+<li>C++里面静态方法：共享，通信</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="cls用来指向类"><a href="#cls用来指向类" class="headerlink" title="cls用来指向类"></a>cls用来指向类</h3><h3 id="self用来指向实例"><a href="#self用来指向实例" class="headerlink" title="self用来指向实例"></a>self用来指向实例</h3>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:zhaocs.github.io">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2018/07/24/异常捕获/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/运算符操作符/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/装饰器/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/csv文件操作/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/Python3_基础语法/"></a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2018 豆芽菜
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+</body>
+</html>

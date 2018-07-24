@@ -1,0 +1,1220 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>第 2 页 | 豆芽菜的爱的博客</title>
+  <meta name="author" content="豆芽菜" />
+
+  
+  <meta name="description" content="男人可以不帅，但是不能不装逼，装逼很重要" />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  
+  <meta property="og:site_name" content="豆芽菜的爱的博客" />
+
+  
+  
+
+  
+    <meta property="og:image" content="" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="豆芽菜的爱的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">豆芽菜的爱的博客</a></h1>
+  <h2><a href="/">新进菜鸟一个</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.877Z"><a href="/2018/07/24/函数构成及作用域/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/07/24/函数构成及作用域/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="函数的构成"><a href="#函数的构成" class="headerlink" title="函数的构成"></a>函数的构成</h1><pre><code>## 函数  是一个容器，里面包含了代码执行语句，还有一系列的变量数据
+</code></pre><ul>
+<li><p>def </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#def语句可以定义函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">'hello world'</span>)</span><br><span class="line"><span class="comment">#def可以出现在Python代码的任意部分</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">True</span>:</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">		print(<span class="string">"1"</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">		print(<span class="string">'123'</span>)</span><br><span class="line">func()</span><br><span class="line">func()</span><br><span class="line"><span class="comment">#永远是在重新定义</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>参数</p>
+<ul>
+<li><p>形参：女嘉宾 (每一位女嘉宾都要和一个男嘉宾配对，顺序一定要对)</p>
+</li>
+<li><p>实参：男嘉宾 具体给形参赋值的，#上错花轿嫁对郎 运气</p>
+</li>
+<li><p>必备参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a,b)</span>:</span></span><br><span class="line">	print(a+b)</span><br><span class="line">func(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="comment">#定义的和调用的一定要一一对应</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命名参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a,b,c,d,e,f)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line">func(b=<span class="number">1</span>,a=<span class="number">2</span>,d=<span class="number">3</span>,f=<span class="number">4</span>,e=<span class="number">3</span>,c=<span class="number">5</span>)</span><br><span class="line"><span class="comment">#命名传参可以打乱顺序</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>缺省参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a,b=<span class="number">1</span>)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"><span class="comment">#缺省参数可以让形参具有默认值</span></span><br><span class="line"><span class="comment">#缺省参数的定义一定是从右向左</span></span><br><span class="line"><span class="comment">#缺省参数后面要么是缺省，要么就没参数了</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不定长参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(*args)</span>:</span></span><br><span class="line">	print(args)</span><br><span class="line"><span class="comment">#*args 用来接收不定长参数保存成元组</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(**kwargs)</span>:</span></span><br><span class="line">	print(kwargs)</span><br><span class="line">func(a=<span class="number">1</span>,b=<span class="number">2</span>,c=<span class="number">3</span>)</span><br><span class="line">kwargs == &#123;<span class="string">'a'</span>:<span class="number">1</span>,<span class="string">'b'</span>:<span class="number">2</span>,<span class="string">'c'</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="comment">#**kwargs 用来接收不定长参数保存成字典，而且在函数调用时，一定要注意使用命名传参的方式</span></span><br><span class="line">func(<span class="number">1</span>=<span class="number">1</span>,<span class="number">2</span>=<span class="number">2</span>,<span class="number">3</span>=<span class="string">'abc'</span>) <span class="comment">#XXXXX Erro</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>返回值</p>
+<ul>
+<li>函数内部的一些操作，不能影响外界的事务</li>
+<li>return 语句 在<strong>函数执行完成</strong>之后返回一个结果</li>
+<li>return 会终止函数运行</li>
+<li><strong>函数调用完成之后会返回结果</strong></li>
+<li><p>默认的函数如果没有返回值，那么返回None</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span><span class="comment">#目的就是为了修改func的功能</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">      print(<span class="string">'123'</span>) <span class="comment">#没有把改动的留下来</span></span><br><span class="line">  <span class="keyword">return</span> func</span><br><span class="line">func = func() <span class="comment">#就是为了改变原来func的功能，变成print('123')</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>#func()()<br>#func: -&gt; 内部定义好的func<br>func() #重新改造之后的调用</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 函数返回值可以**任意多个**，</span><br><span class="line">* 只要是合理的数据，**模块**，对象，函数名均可以返回</span><br><span class="line"></span><br><span class="line">​```python</span><br><span class="line">def func():</span><br><span class="line">    return 1,2,3,4,5,6,7,8</span><br><span class="line">res = func()</span><br><span class="line">print(res)</span><br><span class="line">print(type(res))</span><br><span class="line">var1,var2,var3,var4,var5,var6,var7,var8 = func()</span><br><span class="line">print(var1)</span><br><span class="line">print(type(var1))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> os</span><br><span class="line">hahaha = func()</span><br><span class="line">hahaha.system(<span class="string">"sl"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><pre><code>* **不可变**数据 (回去重新看一下**深浅拷贝**)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">	a = <span class="number">1</span></span><br><span class="line">x = <span class="number">1</span></span><br><span class="line"><span class="comment">#全局变量:x</span></span><br><span class="line"><span class="comment">#局部变量:a</span></span><br><span class="line"><span class="comment">#X: 可以在整个脚本运行期间存活</span></span><br><span class="line"><span class="comment">#a: 只能在函数运行期间存活</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>函数运行期间会开启一个新的内存</li>
+<li>所以说，函数内部的变量和全局的在同名的情况不是同一个变量的</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span> <span class="comment">#全局就是全局</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    a = <span class="number">2</span> <span class="comment">#局部就是局部</span></span><br><span class="line">        <span class="comment">#修改全局a变为2  错误</span></span><br><span class="line">        <span class="comment">#在局部空间创建一个新的同名a 正确</span></span><br><span class="line">    print(<span class="string">"内:"</span>,a)</span><br><span class="line"></span><br><span class="line">func()</span><br><span class="line">print(<span class="string">'func已经运行'</span>)</span><br><span class="line">print(<span class="string">'外:'</span>,a)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>global 把一个局部变量声明成全局的，</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span> <span class="comment">#全局就是全局</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> a <span class="comment">#升级局部变量成为全局的</span></span><br><span class="line">    a = <span class="number">2</span> <span class="comment">#局部就是局部</span></span><br><span class="line">        <span class="comment">#修改全局a变为2  正确</span></span><br><span class="line">        <span class="comment">#在局部空间创建一个新的同名a  错误的</span></span><br><span class="line">    print(<span class="string">"内:"</span>,a)</span><br><span class="line"></span><br><span class="line">func()</span><br><span class="line">print(<span class="string">'func已经运行'</span>)</span><br><span class="line">print(<span class="string">'外:'</span>,a)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.867Z"><a href="/2018/07/24/函数语句/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/07/24/函数语句/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="线上的简历：不要把个人头像作为简历的头像"><a href="#线上的简历：不要把个人头像作为简历的头像" class="headerlink" title="线上的简历：不要把个人头像作为简历的头像"></a>线上的简历：不要把个人头像作为简历的头像</h3><ul>
+<li>大学的东西少讲</li>
+<li>专业技能: Linux/Python(Python) PHP JAVA C/C++(链表,双向链表,引用计数,指针)</li>
+<li>项目经验：名字 用户量10W 服务型电商</li>
+<li>项目使用技术：Python Php Debian</li>
+<li>遇到过的问题: TCP粘包 业务架构的时候 app端 -&gt; H5</li>
+<li>Cookie Session 登陆信息的保留</li>
+<li>扯学历 扯年纪 面成了 强硬</li>
+<li>我是来使用我自己的技能来为公司还有为我创造价值的</li>
+</ul>
+<h3 id="灵性-15K"><a href="#灵性-15K" class="headerlink" title="灵性 15K"></a>灵性 15K</h3><ul>
+<li>你是去推销自己的</li>
+</ul>
+<blockquote>
+<p>14万项目: <a href="https://www.wxrym.com/" target="_blank" rel="noopener">https://www.wxrym.com/</a>  </p>
+</blockquote>
+<ul>
+<li>在Python中一旦一个if条件语句达成，后面的同结构elif语句和else不会实际执行和判断</li>
+</ul>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><ul>
+<li>按照过程编写代码，一般功能都是一次性的，非常不好维护</li>
+<li>把功能封装集成，方便二次开发和维护</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(参数)</span>:</span></span><br><span class="line">	<span class="comment">#...代码</span></span><br><span class="line">	<span class="keyword">return</span> 处理后的结果</span><br><span class="line"><span class="comment">#func 函数名</span></span><br><span class="line"><span class="comment">#func() 函数运行</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(seq)</span>:</span></span><br><span class="line">    seq_1 = str(seq).replace(<span class="string">'['</span>,<span class="string">''</span>) <span class="comment">#去掉左括号 -&gt; str</span></span><br><span class="line">    seq_2 = seq_1.replace(<span class="string">']'</span>,<span class="string">''</span>) <span class="comment">#去掉右括号</span></span><br><span class="line">    seq_3 = seq_2.replace(<span class="string">','</span>,<span class="string">'+'</span>) <span class="comment">#把逗号变成加号</span></span><br><span class="line">    <span class="keyword">return</span> eval(seq_3)</span><br><span class="line"><span class="comment">#func 函数名</span></span><br><span class="line"><span class="comment">#func() 函数调用</span></span><br><span class="line">res = func(mylist) <span class="comment">#元组，列表 字符串</span></span><br><span class="line"><span class="comment">#把函数的返回值保存在res中</span></span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>def 语句 定义函数的语句</p>
+<ul>
+<li><p>def 语句可以出现在整个Python脚本的任意地方</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> a == <span class="number">1</span>:</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">'1'</span>)</span><br><span class="line">    <span class="comment">#只有满足条件的函数会被创建</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">'!=1'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#这个代码会出现几个函数</span></span><br><span class="line">func()</span><br><span class="line"><span class="comment">#Python可以根据这样的情形 动态定义功能函数</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数内部重定义自己</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">'123'</span>)</span><br><span class="line"><span class="comment">#在函数内部重新定义自己</span></span><br><span class="line"><span class="comment">#我第一次调用func()之后，func是不是被重新定义了</span></span><br><span class="line">func()</span><br><span class="line">func()</span><br><span class="line"><span class="comment">#是不是在疯狂的重新定义自己</span></span><br><span class="line"><span class="comment">#函数每一次执行都是从头向下</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>函数的参数</p>
+<ul>
+<li><p>函数的参数是在定义函数时括号中的内容</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(seq)</span>:</span> <span class="comment">#参数其实工作本质 就是为了进行数据的导入，导入到函数中</span></span><br><span class="line">	print(seq)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>形参</strong> 是为了方便在提前编写函数时，可以先在函数内部使用，挖个坑</p>
+<ul>
+<li>形参你可以想成是一个待赋值的变量</li>
+</ul>
+</li>
+<li><p><strong>实参</strong> 就是函数实际调用时传递进去的值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a, b)</span>:</span></span><br><span class="line">    print(a+b)</span><br><span class="line"><span class="comment">#a,b是形参</span></span><br><span class="line">var1 = <span class="number">1</span></span><br><span class="line">var2 = <span class="number">2</span></span><br><span class="line">func(var1,var2)   </span><br><span class="line"><span class="comment">#var1,var2</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#实参 传递给 形参</span></span><br><span class="line"><span class="comment">#在这个过程 其实存在 形参被实参所赋值</span></span><br><span class="line">	<span class="comment">#tmp = var1</span></span><br><span class="line">	<span class="comment">#a = tmp</span></span><br><span class="line">	<span class="comment">#del tmp</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">#a = var1</span></span><br><span class="line">	<span class="comment">#b = var1</span></span><br><span class="line">    <span class="comment">#环太平洋:</span></span><br><span class="line">    <span class="comment"># 机甲 里面的空位 就是形参</span></span><br><span class="line">    <span class="comment"># 机甲开动  在里面的操作员 就是真正的实参</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>参数探究</p>
+<ul>
+<li><p>必备参数</p>
+<ul>
+<li><p>当你定义函数时，形参已经有了，在实参传递的过程，一定要和形参一一对应</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(age,name)</span>:</span></span><br><span class="line">    <span class="comment">#age: %d int</span></span><br><span class="line">    <span class="comment">#name: %s str</span></span><br><span class="line">    print(<span class="string">'我的名字%s,我的年纪%d'</span> % (name,age))</span><br><span class="line">name = <span class="string">'小明'</span></span><br><span class="line">age = <span class="number">18</span></span><br><span class="line">func(age,name)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>命名参数  当函数参数太多了，记不住顺序呀  可以指定的写明形参名去赋值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(age,name)</span>:</span></span><br><span class="line">    <span class="comment">#age: %d int</span></span><br><span class="line">    <span class="comment">#name: %s str</span></span><br><span class="line">    print(<span class="string">'我的名字%s,我的年纪%d'</span> % (name,age))</span><br><span class="line">myname = <span class="string">'小明'</span></span><br><span class="line">myage = <span class="number">18</span></span><br><span class="line"><span class="comment">#age</span></span><br><span class="line"><span class="comment">#name</span></span><br><span class="line">func(name = myname, age = myage)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>缺省参数  </p>
+<ul>
+<li><p>可以在函数定义时，指明一个形参的默认值，就可以不给这个具有默认值的形参传递实参了</p>
+</li>
+<li><p>当你给一个具有默认参数的形参传递一个实参，那么会覆盖掉原有的默认值</p>
+</li>
+<li><p>缺省参数的定义顺序一定是从右向左，从后向前</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(name,age=<span class="number">18</span>)</span>:</span> <span class="comment">#缺省参数 默认参数</span></span><br><span class="line">    <span class="comment"># 女嘉宾  形参</span></span><br><span class="line">    <span class="comment">#age: %d int</span></span><br><span class="line">    <span class="comment">#name: %s str</span></span><br><span class="line">    print(<span class="string">'我的名字%s,我的年纪%d'</span> % (name,age))</span><br><span class="line">myname = <span class="string">'小明'</span></span><br><span class="line">func(name = myname,age = myage)</span><br><span class="line"><span class="comment">#SyntaxError: non-default argument follows default argument</span></span><br><span class="line"><span class="comment">#语法错误：默认参数后只能有默认参数或者没有形参</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不定长参数</p>
+<ul>
+<li><p>元组不定长 <strong>*arg</strong></p>
+<ul>
+<li>*号 只是在定义形参时做标识的</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(*arg)</span>:</span></span><br><span class="line">    print(arg) <span class="comment">#-&gt; 元组</span></span><br><span class="line">    <span class="comment">#print(*arg) 不要用！！分裂人格的数据</span></span><br><span class="line">    <span class="comment">#*arg: 代表每一个传入的值，而且不是列表，不是元组，就是每一个</span></span><br><span class="line">    <span class="comment">#print(type(*arg)) #type函数都没办法正常执行</span></span><br><span class="line"><span class="comment">#用户登记</span></span><br><span class="line">func([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],<span class="string">'abc'</span>,<span class="string">'小白'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>字典不定长  **kwargs</p>
+<ul>
+<li><p>这种不定长传参一定要 命名不定长</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(**kwargs)</span>:</span></span><br><span class="line">    print(kwargs) <span class="comment">#不定长传参(命名传参)成字典</span></span><br><span class="line">    <span class="comment">#print(**kwargs) 直接报错 不让你用</span></span><br><span class="line">func(a=&#123;<span class="string">'name'</span>:<span class="string">'小明'</span>,<span class="string">'sex'</span>:<span class="string">'man'</span>&#125;,b=<span class="number">2</span>,c=<span class="number">3</span>)</span><br><span class="line"><span class="comment">#传递时的形参名作为字典的key 对应的=号的实参是value</span></span><br><span class="line"><span class="comment">#形参a,b,c</span></span><br><span class="line"><span class="comment">#实参就是=后的数据</span></span><br><span class="line"><span class="comment">#cpu disk mem</span></span><br><span class="line">func(<span class="string">'cpu'</span>,<span class="string">'disk'</span>,<span class="string">'mem'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>联合使用</p>
+<ul>
+<li><p>不定长参数可以接收空值</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(i,j,*args,**kwargs)</span>:</span></span><br><span class="line">    <span class="comment">#字典的不定长 一定在元组之后</span></span><br><span class="line">    print(i)</span><br><span class="line">    print(j)</span><br><span class="line">    print(args)</span><br><span class="line">    print(kwargs)</span><br><span class="line">func(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="comment">#规定：传递的时候首先传递单纯变量作为元组不定长，键值对不定长必须在后</span></span><br><span class="line"><span class="comment">#SyntaxError: invalid syntax</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.830Z"><a href="/2018/07/24/函数作用域/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/07/24/函数作用域/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="函数的构成"><a href="#函数的构成" class="headerlink" title="函数的构成"></a>函数的构成</h1><pre><code>## 函数  是一个容器，里面包含了代码执行语句，还有一系列的变量数据
+</code></pre><ul>
+<li><p>def </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#def语句可以定义函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">'hello world'</span>)</span><br><span class="line"><span class="comment">#def可以出现在Python代码的任意部分</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">True</span>:</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">		print(<span class="string">"1"</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">		print(<span class="string">'123'</span>)</span><br><span class="line">func()</span><br><span class="line">func()</span><br><span class="line"><span class="comment">#永远是在重新定义</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>参数</p>
+<ul>
+<li><p>形参：女嘉宾 (每一位女嘉宾都要和一个男嘉宾配对，顺序一定要对)</p>
+</li>
+<li><p>实参：男嘉宾 具体给形参赋值的，#上错花轿嫁对郎 运气</p>
+</li>
+<li><p>必备参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a,b)</span>:</span></span><br><span class="line">	print(a+b)</span><br><span class="line">func(<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"><span class="comment">#定义的和调用的一定要一一对应</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>命名参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a,b,c,d,e,f)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line">func(b=<span class="number">1</span>,a=<span class="number">2</span>,d=<span class="number">3</span>,f=<span class="number">4</span>,e=<span class="number">3</span>,c=<span class="number">5</span>)</span><br><span class="line"><span class="comment">#命名传参可以打乱顺序</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>缺省参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(a,b=<span class="number">1</span>)</span>:</span></span><br><span class="line">	<span class="keyword">pass</span></span><br><span class="line"><span class="comment">#缺省参数可以让形参具有默认值</span></span><br><span class="line"><span class="comment">#缺省参数的定义一定是从右向左</span></span><br><span class="line"><span class="comment">#缺省参数后面要么是缺省，要么就没参数了</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不定长参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(*args)</span>:</span></span><br><span class="line">	print(args)</span><br><span class="line"><span class="comment">#*args 用来接收不定长参数保存成元组</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(**kwargs)</span>:</span></span><br><span class="line">	print(kwargs)</span><br><span class="line">func(a=<span class="number">1</span>,b=<span class="number">2</span>,c=<span class="number">3</span>)</span><br><span class="line">kwargs == &#123;<span class="string">'a'</span>:<span class="number">1</span>,<span class="string">'b'</span>:<span class="number">2</span>,<span class="string">'c'</span>:<span class="number">3</span>&#125;</span><br><span class="line"><span class="comment">#**kwargs 用来接收不定长参数保存成字典，而且在函数调用时，一定要注意使用命名传参的方式</span></span><br><span class="line">func(<span class="number">1</span>=<span class="number">1</span>,<span class="number">2</span>=<span class="number">2</span>,<span class="number">3</span>=<span class="string">'abc'</span>) <span class="comment">#XXXXX Erro</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>返回值</p>
+<ul>
+<li>函数内部的一些操作，不能影响外界的事务</li>
+<li>return 语句 在<strong>函数执行完成</strong>之后返回一个结果</li>
+<li>return 会终止函数运行</li>
+<li><strong>函数调用完成之后会返回结果</strong></li>
+<li><p>默认的函数如果没有返回值，那么返回None</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span><span class="comment">#目的就是为了修改func的功能</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">      print(<span class="string">'123'</span>) <span class="comment">#没有把改动的留下来</span></span><br><span class="line">  <span class="keyword">return</span> func</span><br><span class="line">func = func() <span class="comment">#就是为了改变原来func的功能，变成print('123')</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>#func()()<br>#func: -&gt; 内部定义好的func<br>func() #重新改造之后的调用</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">* 函数返回值可以**任意多个**，</span><br><span class="line">* 只要是合理的数据，**模块**，对象，函数名均可以返回</span><br><span class="line"></span><br><span class="line">​```python</span><br><span class="line">def func():</span><br><span class="line">    return 1,2,3,4,5,6,7,8</span><br><span class="line">res = func()</span><br><span class="line">print(res)</span><br><span class="line">print(type(res))</span><br><span class="line">var1,var2,var3,var4,var5,var6,var7,var8 = func()</span><br><span class="line">print(var1)</span><br><span class="line">print(type(var1))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> os</span><br><span class="line">hahaha = func()</span><br><span class="line">hahaha.system(<span class="string">"sl"</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="函数作用域"><a href="#函数作用域" class="headerlink" title="函数作用域"></a>函数作用域</h3><pre><code>* **不可变**数据 (回去重新看一下**深浅拷贝**)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">	a = <span class="number">1</span></span><br><span class="line">x = <span class="number">1</span></span><br><span class="line"><span class="comment">#全局变量:x</span></span><br><span class="line"><span class="comment">#局部变量:a</span></span><br><span class="line"><span class="comment">#X: 可以在整个脚本运行期间存活</span></span><br><span class="line"><span class="comment">#a: 只能在函数运行期间存活</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>函数运行期间会开启一个新的内存</li>
+<li>所以说，函数内部的变量和全局的在同名的情况不是同一个变量的</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span> <span class="comment">#全局就是全局</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    a = <span class="number">2</span> <span class="comment">#局部就是局部</span></span><br><span class="line">        <span class="comment">#修改全局a变为2  错误</span></span><br><span class="line">        <span class="comment">#在局部空间创建一个新的同名a 正确</span></span><br><span class="line">    print(<span class="string">"内:"</span>,a)</span><br><span class="line"></span><br><span class="line">func()</span><br><span class="line">print(<span class="string">'func已经运行'</span>)</span><br><span class="line">print(<span class="string">'外:'</span>,a)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>global 把一个局部变量声明成全局的，</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span> <span class="comment">#全局就是全局</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> a <span class="comment">#升级局部变量成为全局的</span></span><br><span class="line">    a = <span class="number">2</span> <span class="comment">#局部就是局部</span></span><br><span class="line">        <span class="comment">#修改全局a变为2  正确</span></span><br><span class="line">        <span class="comment">#在局部空间创建一个新的同名a  错误的</span></span><br><span class="line">    print(<span class="string">"内:"</span>,a)</span><br><span class="line"></span><br><span class="line">func()</span><br><span class="line">print(<span class="string">'func已经运行'</span>)</span><br><span class="line">print(<span class="string">'外:'</span>,a)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.798Z"><a href="/2018/07/24/继承/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/07/24/继承/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h2><ul>
+<li><p>详情咨询蔡老师，报名或者具体事宜：老蔡QQ：1815759616</p>
+</li>
+<li><p>面向对象：</p>
+<ul>
+<li>实例</li>
+<li>类</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">a = A() <span class="comment">#实例化</span></span><br><span class="line"><span class="comment">#a：实例，通过抽象属性集合具体实例化得出来的</span></span><br><span class="line"><span class="comment">#A：类，抽象的属性集合</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>数据初始化函数</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">__init__(self)</span><br><span class="line"><span class="number">1</span>：init函数会在实例化过程中自动调用</span><br><span class="line"><span class="number">2</span>：init函数不允许返回除了None之外的任何对象</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,num=None)</span>:</span></span><br><span class="line">        self.num = num</span><br><span class="line">        <span class="keyword">return</span> self.num</span><br><span class="line"></span><br><span class="line">a = A() <span class="comment">#num当你在实例化过程中不传递有效数据(或为None)的时候，不会报错</span></span><br><span class="line">a = A(<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li>self</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">self: 用来维护当前的属性 是属于谁的</span><br><span class="line">	一旦一个属性有了self来维护，那么这个属性就属于实例，私有</span><br><span class="line">	self == 内裤</span><br><span class="line">	self.name</span><br><span class="line">	self.__init__()</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Human</span>:</span></span><br><span class="line">    place = <span class="string">'地球'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,sex)</span>:</span></span><br><span class="line">        self.name = name <span class="comment">#self.的东西都是你的内裤</span></span><br><span class="line">        self.sex = sex</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">threebusy</span><span class="params">(self)</span>:</span> <span class="comment">#实例才能做的事情</span></span><br><span class="line">        <span class="comment">#hp = self.hp - 1</span></span><br><span class="line">        <span class="comment">#会更新我这个实例中的hp吗？</span></span><br><span class="line">        <span class="comment">#hp是你定义的局部变量</span></span><br><span class="line">        self.hp = self.hp - <span class="number">1</span></span><br><span class="line">        print(self.hp)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span> <span class="comment">#类的普通函数</span></span><br><span class="line">        print(<span class="string">'abc'</span>)</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>变量</p>
+<ul>
+<li><p>类的变量：大家都可以访问，类的变量可以共享(客厅)</p>
+<ul>
+<li>类的变量实例一旦修改 那么就会变成实例所私有的</li>
+</ul>
+<blockquote>
+<p>place</p>
+</blockquote>
+</li>
+<li><p>实例的变量：无法被类直接访问，只能被实例所访问</p>
+<blockquote>
+<p>self.name</p>
+<p>self.sex</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>方法(函数)</p>
+<ul>
+<li><p>实例的方法：类无法直接调用，只能通过实例调用</p>
+<p>（或通过类名调用传递实例作为第一个参数才可以）</p>
+<ul>
+<li>要具备默认的self作为第一个参数</li>
+<li>self会被实例所覆盖传递(不显示)</li>
+</ul>
+</li>
+<li><p>类的函数</p>
+<ul>
+<li><p>类的普通函数</p>
+<ul>
+<li>只能被类所使用，并且无法直接访问类的变量</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span> <span class="comment">#类的普通函数</span></span><br><span class="line">	print(<span class="string">'abc'</span>)</span><br><span class="line">	<span class="comment">#print(Human.place) #先找到Human 再找到place</span></span><br><span class="line">		<span class="comment">#明确告诉了代码 你用的是哪个类的变量</span></span><br><span class="line">	print(place) <span class="comment">#找到自己的place</span></span><br><span class="line">		<span class="comment">#没有告诉代码 我用的谁的 默认应该就是用的自己的</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>可以通过类名的方式获取变量，但是性质已经变了</li>
+</ul>
+</li>
+<li><p>类的高级函数：类和实例都可以访问，还可以访问类的变量，但是实例的永远不了</p>
+<ul>
+<li>@classmethod</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@classmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">H_func</span><span class="params">(cls)</span>:</span> <span class="comment">#cls指向当前的类</span></span><br><span class="line">	print(cls.place) <span class="comment">#可以访问到类中变量</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>类的静态函数：类和实例都可以访问，但是静态函数无法访问类的变量</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@staticmethod</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">S_func</span><span class="params">()</span>:</span> <span class="comment">#类和实例都可以访问</span></span><br><span class="line">	<span class="comment">#变量都不能访问</span></span><br><span class="line">	print(<span class="string">'静态函数'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>|              | 实例的函数(self) | 类的普通函数 | 类的高级函数(cls) | 类的静态函数 |<br>| ———— | :————–: | :———-: | :—————: | :———-: |<br>| 能被实例调用 |        √         |      X       |         √         |      √       |<br>| 能被类调用   |        X         |      √       |         √         |      √       |<br>| 访问实例变量 |        √         |      X       |         X         |      X       |<br>| 访问类变量   |        √         |      X       |         √         |      X       |</p>
+<ul>
+<li><p>实例是可以访问类的变量的，但是千万记得不要修改，一旦修改，就变成<strong>当前</strong>实例私有的了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.place = <span class="string">'月球'</span> <span class="comment">#那么就不对了，就变成私有的了</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>##继承</p>
+<ul>
+<li><p>继承：父类和字类，当你的子类继承自某个父类，那么这个子类就会拥有所有父类中的内容</p>
+</li>
+<li><p>继承之后，当你的子类没有重写父类的init数据初始化函数。那么还会继续默认使用父类的。</p>
+<ul>
+<li>子类可以享受父类所有的，并且还可以添加新的</li>
+<li>父类不能享受孩子所有的</li>
+</ul>
+</li>
+<li><p>super()：找到当前类的父类</p>
+<ul>
+<li>super().<strong>init</strong>()</li>
+</ul>
+</li>
+<li><p>在字类中使用父类属性的时候，一定要确定，你在子类中是保留下来了，而不是因为覆盖重写给丢弃了</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#添加功能的话 可以先用super().func() 调用了父类的函数之后，在去编写新的添加功能代码</span></span><br><span class="line"><span class="comment">#修改功能的话，只能是重写</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#回去看一下 引用计数</span></span><br><span class="line"><span class="comment">#周末：</span></span><br><span class="line">    <span class="comment">#os模块作业</span></span><br><span class="line">    <span class="comment">#递归的练习</span></span><br><span class="line">    <span class="comment">#勇士的加密解密</span></span><br><span class="line"><span class="comment">#周末上课安排：</span></span><br><span class="line">    <span class="comment">#早上10:00 - 12:00</span></span><br><span class="line">    <span class="comment">#下午2:30 - 4:30</span></span><br><span class="line">    <span class="comment">#晚上8:30 - 10:30</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#A:周六 15</span></span><br><span class="line"><span class="comment">#B:周日 9</span></span><br><span class="line"><span class="comment">#周日分享锻炼上课：助教 分享</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.794Z"><a href="/2018/07/24/类的内建函数/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/07/24/类的内建函数/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="类中内建函数"><a href="#类中内建函数" class="headerlink" title="类中内建函数"></a>类中内建函数</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">python的构造函数是 __new__函数  不是__init__</span><br><span class="line"></span><br><span class="line">__new__(cls): 构造器 Python自动帮你维护 </span><br><span class="line">用于控制实例的生产 </span><br><span class="line">	<span class="number">1</span>: 空间的初始化</span><br><span class="line">	<span class="number">2</span>: 在实例化过程中自动执行</span><br><span class="line">	<span class="number">3</span>: new函数的返回值就是创建出来的实例</span><br><span class="line">	<span class="number">4</span>: 类级别的函数</span><br><span class="line">	</span><br><span class="line">*__init__(self): 数据初始化 </span><br><span class="line">	<span class="number">1</span>: 数据初始化</span><br><span class="line">	<span class="number">2</span>: 自动化实例化过程中运行</span><br><span class="line">	<span class="number">3</span>: 不允许返回除了None以外的任何对象</span><br><span class="line"></span><br><span class="line">__del__(self): 析构器 Python自动帮你维护</span><br><span class="line">用来在实例释放的时候自动调用。</span><br><span class="line">	<span class="comment"># 手动del</span></span><br><span class="line">	<span class="comment"># 程序运行结束</span></span><br><span class="line">将实例所占有的内存及引用计数释放。</span><br><span class="line"></span><br><span class="line"><span class="comment">#a = A()</span></span><br><span class="line">    <span class="comment">#1: a = A.__new__()  创建实例</span></span><br><span class="line">    <span class="comment">#a.__init__()  分配数据</span></span><br><span class="line"></span><br><span class="line">del： 删除变量名，引用计数减<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls)</span>:</span></span><br><span class="line">        print(<span class="string">'空间初始化...'</span>)</span><br><span class="line">        <span class="comment">#Python不需要你重写这个函数</span></span><br><span class="line">        <span class="comment">#真正的创建实例</span></span><br><span class="line">        <span class="keyword">return</span> super(A,cls).__new__(cls)</span><br><span class="line">            <span class="comment">#1: 找到类A的父类 super(A,cls)</span></span><br><span class="line">            <span class="comment">#2: 通过类A的父类实例的对象 生产出类A的实例 object.__new__(cls)</span></span><br><span class="line">            </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我是数据初始化函数...'</span>)</span><br><span class="line">        self.a = <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">   	<span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">del</span> self.a</span><br><span class="line">        print(<span class="string">'我是析构函数...'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__call__(self) </span><br><span class="line">	重载了() 函数调用的符号</span><br><span class="line">	一旦在类中维护了__call__(self)</span><br><span class="line">	那么代表这个类的实例可以做函数直接调用</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__slots__ 用来锁定类的属性</span><br><span class="line">__slots__ = (<span class="string">'meat'</span>,<span class="string">'egg'</span>,<span class="string">'juice'</span>)</span><br><span class="line">	<span class="comment">#实例只能拥有在slots中定义的值meat，egg，juice</span></span><br><span class="line">类的锁定属性__slots__ 是可以被继承，但是无法在子类中生效</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@proporty</span><br><span class="line">	<span class="comment">#可以把类中方法 直接作为实例属性来使用</span></span><br><span class="line">	<span class="comment">#当含有参数时，会报错</span></span><br><span class="line">		<span class="comment">#TypeError: func() missing 1 required positional argument: 'a'</span></span><br><span class="line">		</span><br><span class="line">@staticmethod</span><br><span class="line">	<span class="comment">#静态方法</span></span><br><span class="line">@classmethod</span><br><span class="line">	<span class="comment">#类的高级方法</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.786Z"><a href="/2018/07/24/面向对象/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/07/24/面向对象/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">一个粗心的发报员在发送莫尔斯电码（Morse Code）的时候，忘记在发送字母和单词之间停顿，结果收报系统收到的是下面这样的一个没有分隔符的点（.）划（-）的序列（请忽略换行符）。</span><br><span class="line"> </span><br><span class="line">.-.-....-.-...--.-...-....--...-.-...-.--.------..-...-..-.-.---...-..-..---..-..</span><br><span class="line">....--..-.--.-...-.--......-.........-..-.----.-.....-....--.-.-.--.-..---..-....</span><br><span class="line">..-...-..-.--.-.----......-.--.-----..-------.-.-..---.-.-.--..-.-...............</span><br><span class="line">--...--....--..-....-.-----.....-...-------.-......-.........-..-..--.-....-...--</span><br><span class="line">....-.--.-.....--..-.....--..-.---.--...-.-.-..-.-.....---.-.-.-.----....-..-....</span><br><span class="line">.--..----......-...-.--.-...--.....--.....-.......-....---..-..--...-------.--...</span><br><span class="line">.---..---.....-.-.-....-.-...--..-....---..--.--...-.-.-..-.-.....---.-.-.-.----.</span><br><span class="line">...-..-.....--..----.</span><br><span class="line"> </span><br><span class="line">已知这份报文的原始内容是一部著名英文小说的片段，请问，这部小说的作者是：</span><br><span class="line"> </span><br><span class="line">(A) H. G. Wells</span><br><span class="line">(B) J. K. Rowling</span><br><span class="line">(C) Isaac Asimov</span><br><span class="line">(D) Lewis Carroll</span><br><span class="line">(E) Jack London</span><br><span class="line">(F) Stephen King</span><br><span class="line">(G) J. R. R. Tolkien</span><br><span class="line">(H) Edgar Rice Burroughs</span><br><span class="line"> </span><br><span class="line">请写出本题解题的主要思路，以及解题时使用的主要代码片段：</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">15分钟</span><br><span class="line">1. 排序方式：DESC | ASCE，分别表示按降序和升序排列，大小写不敏感</span><br><span class="line">2. 一组十进制整数字符串，以&quot;,&quot;符号作为分隔符</span><br><span class="line">例子：</span><br><span class="line">DESC 789,123,456</span><br><span class="line">ASCE 234,567,89</span><br><span class="line"></span><br><span class="line">排序方式DESC ASCE请忽略大小写</span><br><span class="line">输出描述:</span><br><span class="line">按指定排序方式排序后得到的十进制整数字符串；</span><br><span class="line">输出的数字字符串数组，以&quot;,&quot;字符作为分隔符。</span><br><span class="line">示例1</span><br><span class="line">输入</span><br><span class="line">DESC 789,123,456</span><br><span class="line">输出</span><br><span class="line">789,456,123</span><br><span class="line">#Python Ruby C/C++ PHP Java</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">海投简历标准：</span><br><span class="line">1：头像：不要用真人的</span><br><span class="line">2：专业技能列表：多丰富一些</span><br><span class="line">	了解的也写上 敲门砖</span><br><span class="line">3：项目经验</span><br><span class="line">	看着写</span><br><span class="line">4：不要写培训</span><br></pre></td></tr></table></figure>
+<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><ul>
+<li>对象是什么？：对象是一个<strong>模型</strong><ul>
+<li>IT行业 这就是一个对象<ul>
+<li>C/C++，Python，PHP，Java 细节</li>
+</ul>
+</li>
+<li>楼房：平房，四合院，公寓</li>
+<li>面：刀削面，牛肉丸子面，方便面</li>
+</ul>
+</li>
+<li>为什么这些可以称作是一个模型？：<ul>
+<li>有特征、有共同点</li>
+<li>把共同点组合起来，就可以抽象的总结出来一个模型</li>
+<li>那么这个模型就叫做对象</li>
+</ul>
+</li>
+</ul>
+<h1 id="class"><a href="#class" class="headerlink" title="class"></a>class</h1><ul>
+<li><p>class用来定义一个<strong>类</strong>(一个共同点的模型)：</p>
+<ul>
+<li><p>属性：</p>
+<ul>
+<li>函数：方法，人们喜欢把类中的函数叫方法</li>
+<li>变量：字符串，列表，元组，字典，集合</li>
+</ul>
+</li>
+<li><p>类：一个属性集合</p>
+</li>
+<li><p>实例：在内存里通过模型实例化创建的数据</p>
+<ul>
+<li>实例是一个容器一样，包含了所有类里的属性，而且是实际存在于内存中的</li>
+</ul>
+</li>
+<li><p>实例化：通过类名括号的方式</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class A:</span><br><span class="line">	pass</span><br><span class="line">a = A() <span class="comment"># 实例化</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>面向对象的语法中，我们可以通过xxx.xxxx来获取到对应的属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mylist = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">mylist.remove(<span class="number">2</span>)</span><br><span class="line">mylist</span><br><span class="line">[<span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Python中处处皆对象</p>
+</li>
+</ul>
+<h1 id="self指针的意义"><a href="#self指针的意义" class="headerlink" title="self指针的意义"></a>self指针的意义</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">1.self是一个将我们函数声明为单独为一个实例工作的参数</span><br><span class="line"></span><br><span class="line">2.每一个加了self的函数或者变量 都只能为自己的实例来工作</span><br><span class="line">	c1.run()</span><br><span class="line">	c2.run()</span><br><span class="line">	</span><br><span class="line">3.在实例调用的时候，当前实例都会覆盖掉self</span><br><span class="line"></span><br><span class="line">4.self用来指向当前工作实例</span><br><span class="line">	self是约定俗称的命名，你也可以叫别的，但是一般都叫self</span><br></pre></td></tr></table></figure>
+<p>#<strong>init</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">__init__函数为每一个实例进行数据的初始化工作</span><br><span class="line">	构造函数 X</span><br><span class="line">	数据初始化函数 √ </span><br><span class="line">	就是为了给实例创建属于自己的变量</span><br><span class="line">__init__函数在实例化过程中自动调用，不需要你手动的来调用</span><br><span class="line">__init__函数不允许有返回值，一旦有返回值，那么就报错啦</span><br><span class="line">	TypeError: __init__() should return None, not &apos;int&apos;</span><br><span class="line">	类型错误： 该函数必须返回一个None，而不是int</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.782Z"><a href="/2018/07/24/面向对象属性探究/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/07/24/面向对象属性探究/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>#面向对象属性探究</p>
+<blockquote>
+<p>神盾局特工 闪电侠 蚁人 ：看看美剧</p>
+</blockquote>
+<ul>
+<li><p>属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Human</span>:</span></span><br><span class="line">    place = <span class="string">'地球'</span> <span class="comment">#类的变量</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name)</span>:</span></span><br><span class="line">        self.name = name <span class="comment">#实例的变量</span></span><br><span class="line">h1 = Human(<span class="string">'小红'</span>)</span><br><span class="line">h2 = Human(<span class="string">'小明'</span>)</span><br><span class="line"></span><br><span class="line">print(h1.name)</span><br><span class="line">print(h2.name)</span><br></pre></td></tr></table></figure>
+<p>#变量</p>
+<ul>
+<li>实例的变量：<strong>只能被实例</strong>所访问(<strong>私有</strong>)<ul>
+<li>实例的变量可以被实例所使用</li>
+<li>h1.name 实例.的方式来获取到属于实例的私有变量<ul>
+<li>属于实例的self.xxx 这样子的变量是<strong>无法通过类</strong>来直接访问的。因为这些属性需要实例化</li>
+<li>self.xxx这样子的变量 是我的实例所私有的</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>类的变量：可以被<strong>实例，类</strong>同时访问(<strong>共享</strong>)<ul>
+<li>但是：如果实例修改或者重新赋值了类的变量，那么这个变量将升级为私有的</li>
+<li>如果这个变量没有提前出现过，我也赋值定义修改了，那么也会变成这个实例独有的。</li>
+</ul>
+</li>
+<li>内部的是独立私有的，外部的是大家公用的(共享)</li>
+<li>类和实例均支持在创建之后，存活期间动态的添加新的属性<ul>
+<li>实例添加的时候，如果你只为一个单独实例添加，那么其他实例是不会有的</li>
+<li>类添加的时候，大家都有</li>
+</ul>
+</li>
+</ul>
+<h1 id="方法-函数"><a href="#方法-函数" class="headerlink" title="方法(函数)"></a>方法(函数)</h1><ul>
+<li><p>实例的方法：只能被实例所调用，而且默认实例方法第一个位置上的参数，必须传递调用实 例！</p>
+<ul>
+<li>def func(self)…</li>
+<li>xx.func 来调用一个实例函数，那么实例一定会作为第一个参数传递进来</li>
+<li>函数中的self也可以让我们方便的直接获取到属于实例的私有变量</li>
+<li>实例函数中可以访问其他实例属性：因为self来指向当前实例中的其他属性,self.other</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Car</span>:</span> </span><br><span class="line">    tax = <span class="number">1.5</span> <span class="comment">#大家共享税的标准</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self,name,driver)</span>:</span></span><br><span class="line">        self.name = name <span class="comment">#车的名字</span></span><br><span class="line">        self.driver = driver <span class="comment">#所有者</span></span><br><span class="line">        self.gas = <span class="number">0</span> <span class="comment">#车的油量</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">run</span><span class="params">(self)</span>:</span> <span class="comment"># 车子会跑</span></span><br><span class="line">        <span class="keyword">if</span> self.gas &lt;= <span class="number">0</span>:</span><br><span class="line">            print(<span class="string">'没油不跑'</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="string">'跑一下！'</span>)</span><br><span class="line">            self.gas = self.gas - <span class="number">10</span> <span class="comment">#跑一次少10升</span></span><br><span class="line">            print(<span class="string">'当前流量:'</span>,self.gas)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_oil</span><span class="params">(self,oil_num)</span>:</span> <span class="comment">#加油</span></span><br><span class="line">        self.gas += oil_num <span class="comment">#加到油</span></span><br><span class="line">        print(<span class="string">'加完油了:'</span>,self.gas)</span><br><span class="line">        </span><br><span class="line">c = Car(<span class="string">'Bomb Bee'</span>,<span class="string">'小蓝'</span>)</span><br><span class="line">c.add_oil(<span class="number">100</span>) <span class="comment">#加100升</span></span><br><span class="line">c.run()</span><br><span class="line"><span class="comment">#Car.run() #XXX 错误的！这里就报错了 类不可以直接使用实例的函数</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>类的方法</p>
+<ul>
+<li>类的普通函数  权限完全封闭 啥都别想看<ul>
+<li>只能被类所使用，实例访问不了这种函数</li>
+<li>不能访问类变量以及实例变量</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    place = <span class="string">'地球'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.name = <span class="string">'哈哈哈'</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(cls,a,b,c,d,e)</span>:</span> <span class="comment">#函数没有任何参数</span></span><br><span class="line">    <span class="comment">#类的普通函数</span></span><br><span class="line">        print(<span class="string">"啊哈哈哈哈哈哈"</span>)</span><br><span class="line">a = A()</span><br><span class="line">a.func() <span class="comment">#普通类方法 无法被实例调用</span></span><br><span class="line">A.func() <span class="comment">#普通类方法，只能被类调用</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>类的高级函数  权限展开了类的变量访问权限<ul>
+<li>实例和类均可调用</li>
+<li><strong>可以访问属于类的变量</strong></li>
+<li>不可以访问属于实例的属性</li>
+<li>你有了cls之后，也就可以互相指向到其他类中高级函数，也就可以调用了<ul>
+<li>可以在另外一个类中高级函数调用其他类的高级函数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g_func</span><span class="params">(cls)</span>:</span> <span class="comment">#默认的必须要有一个参数，</span></span><br><span class="line">        <span class="comment">#cls参数用来指向当前的类!</span></span><br><span class="line">        print(cls.place)</span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">g_func1</span><span class="params">(cls)</span>:</span> <span class="comment">#默认的必须要有一个参数，</span></span><br><span class="line">        cls.g_func()</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在这里，必须为类的高级函数第一个参数约定俗称的写一个cls形参</p>
+<p>该形参用来接收使用的类</p>
+</blockquote>
+<ul>
+<li>类的静态方法：开放了实例访问函数的权限，但是变量的权限访问(访问类、实例变量)全部关闭<ul>
+<li>首先无法访问属于类的变量，没有指向当前使用类的指针</li>
+<li>实例和类均可调用</li>
+<li>不可以访问属于实例的属性</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = []</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">...</span><br><span class="line"><span class="meta">@staticmethod #类似与类的普通函数</span></span><br><span class="line"><span class="comment">#不需要cls这样的额外参数</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">s_func</span><span class="params">()</span>:</span></span><br><span class="line">		print(<span class="string">'哈哈哈哈哈'</span>)</span><br><span class="line">		<span class="comment">#和我类数据无关的操作</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>实例之间可以通过静态方法@staticmethod以及高级类方法@classmethod可以进行数据通信<ul>
+<li>C++里面静态方法：共享，通信</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="cls用来指向类"><a href="#cls用来指向类" class="headerlink" title="cls用来指向类"></a>cls用来指向类</h3><h3 id="self用来指向实例"><a href="#self用来指向实例" class="headerlink" title="self用来指向实例"></a>self用来指向实例</h3>
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.777Z"><a href="/2018/07/24/匿名函数/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/07/24/匿名函数/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h3 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h3><ul>
+<li>形参都是局部的</li>
+</ul>
+<ul>
+<li><p>不可变数据对象，在函数内外的值，用到了引用计数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span>  <span class="comment">#全局变量</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#global a #声明a变量为全局</span></span><br><span class="line">    a = <span class="number">1</span> <span class="comment">#局部变量</span></span><br><span class="line">    print(<span class="string">'内:'</span>,a)</span><br><span class="line">    print(<span class="string">'内:'</span>,id(a)) <span class="comment">#id -&gt; 1</span></span><br><span class="line">    <span class="comment">#return a</span></span><br><span class="line">func()</span><br><span class="line">print(<span class="string">'外:'</span>,a)</span><br><span class="line">print(<span class="string">'外:'</span>,id(a))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>不同作用域之间的变量使用</p>
+</li>
+<li><p><strong>全局变量</strong> 的可以被 <strong>局部作用域</strong>使用</p>
+</li>
+<li><p>但是<strong>局部变量</strong>不可以被<strong>全局作用域</strong>所使用，除非你用global语句升级，声明为全局变量</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    print(a)</span><br><span class="line">    <span class="comment">#函数内部并没有定义a</span></span><br><span class="line">func()</span><br><span class="line"><span class="comment">#大厅(全局)</span></span><br><span class="line">    <span class="comment">#如果在客房里没有的东西，那么就会到大厅里来找</span></span><br><span class="line"><span class="comment">#客房(函数)</span></span><br><span class="line">    <span class="comment">#我想在客房里获取一下泡面(a)</span></span><br><span class="line">    <span class="comment">#客房里没有，咋办？</span></span><br><span class="line">    <span class="comment">#从客房里出来，去大厅找</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work</span><span class="params">()</span>:</span></span><br><span class="line">    b = <span class="number">1</span></span><br><span class="line">print(b)</span><br><span class="line"><span class="comment">#b is not defined</span></span><br><span class="line"><span class="comment">#但是全局是不可以直接使用局部的</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    print(a)</span><br><span class="line">a = <span class="number">1</span></span><br><span class="line">func()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>想要函数内的代码生效,必须调用函数</li>
+</ul>
+<h4 id="函数内部如果直接使用全局可变对象"><a href="#函数内部如果直接使用全局可变对象" class="headerlink" title="函数内部如果直接使用全局可变对象"></a>函数内部如果直接使用全局可变对象</h4><ul>
+<li>全局可变对象,在函数内部使用的时,其实是一个共享状态</li>
+<li>是因为列表的指针域 是一个 也会存在引用计数的情况</li>
+<li>解决办法就是在函数内部使用深浅拷贝</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#内外其实现在共同使用同一个列表</span></span><br><span class="line"><span class="comment">#内外互相影响，用的就是同一个列表</span></span><br><span class="line"><span class="comment">#这样的数据可以在函数之间进行通信</span></span><br><span class="line">mylist = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    mylist[<span class="number">0</span>] = <span class="string">'a'</span></span><br><span class="line">    print(<span class="string">'内:'</span>,mylist)</span><br><span class="line">func()</span><br><span class="line">print(<span class="string">'外:'</span>,mylist)</span><br></pre></td></tr></table></figure>
+<h4 id="可变数据在传递参数时"><a href="#可变数据在传递参数时" class="headerlink" title="可变数据在传递参数时"></a>可变数据在传递参数时</h4><ul>
+<li>在函数内部直接通过形参修改,也会影响原有数据</li>
+<li>可变对象在传递参数时,只是一个引用</li>
+</ul>
+<h4 id="不可变数据在传递参数时"><a href="#不可变数据在传递参数时" class="headerlink" title="不可变数据在传递参数时"></a>不可变数据在传递参数时</h4><ul>
+<li>在函数内部直接通过形参修改,不会影响原有数据</li>
+</ul>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><ul>
+<li><p>lambda 表达式</p>
+</li>
+<li><p>除了def语句,我们还可以通过lambda语句来创建函数</p>
+</li>
+<li><p>lambda创建的函数 因为默认不具有名字，他需要我们来指定一个变量名来保存</p>
+</li>
+<li><p>表达式的结果，将作为返回值自动返回</p>
+</li>
+<li><p>轻量级的函数 一般使用lambda来实现</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="keyword">lambda</span> x: x*<span class="number">2</span></span><br><span class="line">a(<span class="number">2</span>)</span><br><span class="line"><span class="comment">#lamdba 参数 : 表达式</span></span><br></pre></td></tr></table></figure>
+<h4 id="跳转表：包含函数的字典或者列表"><a href="#跳转表：包含函数的字典或者列表" class="headerlink" title="跳转表：包含函数的字典或者列表"></a>跳转表：包含函数的字典或者列表</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">mylist = [<span class="keyword">lambda</span> x,y:x**y,<span class="keyword">lambda</span> x,y:x**(y+<span class="number">1</span>),<span class="keyword">lambda</span> x,y:x**(y+<span class="number">2</span>)] <span class="comment">#跳转表</span></span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> range(<span class="number">5</span>): <span class="comment">#取出来0-4的数据</span></span><br><span class="line">    <span class="keyword">for</span> func <span class="keyword">in</span> mylist:</span><br><span class="line">        res = func(var,<span class="number">2</span>)</span><br><span class="line">        print(res)</span><br><span class="line">   	print(<span class="string">'-------------'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="三元表达式"><a href="#三元表达式" class="headerlink" title="三元表达式"></a>三元表达式</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x + <span class="number">1</span> <span class="keyword">if</span> x &gt; <span class="number">0</span> <span class="keyword">else</span> x - <span class="number">1</span></span><br><span class="line"><span class="comment">#当条件满足时(x &gt; 0) 执行表达式左边的,反之执行表达式右边的</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">oper_func_dict = &#123;</span><br><span class="line">    <span class="string">'+'</span>:<span class="keyword">lambda</span> x,y : x + y <span class="keyword">if</span> x &gt; <span class="number">0</span> <span class="keyword">else</span> x - y,</span><br><span class="line">    <span class="string">'-'</span>:<span class="keyword">lambda</span> x,y : x-y,</span><br><span class="line">    <span class="string">'*'</span>:<span class="keyword">lambda</span> x,y : x*y,</span><br><span class="line">    <span class="string">'/'</span>:<span class="keyword">lambda</span> x,y : x/y,</span><br><span class="line">&#125;</span><br><span class="line">res = oper_func_dict[<span class="string">'+'</span>](x=<span class="number">0</span>,y=<span class="number">1</span>)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.772Z"><a href="/2018/07/24/生成器迭代器/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/07/24/生成器迭代器/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h1><ul>
+<li><p>迭代器：抽象的数据</p>
+<ul>
+<li><p>迭代器中包含有两个内置函数</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">__next__</span><br><span class="line">__iter__</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python3：range() 可迭代的对象</span><br><span class="line">python2：xrange()</span><br><span class="line">当你不去真正使用数据的时候，数据不会创建出来</span><br><span class="line">节约内存</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">可迭代的对象</span><br><span class="line">	<span class="number">1</span>：都可以通过<span class="keyword">for</span>循环访问</span><br><span class="line">	<span class="number">2</span>: 前一个数据可以找到后一个数据</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>迭代器访问的方式：一定是一个抽象的数据</p>
+<ul>
+<li><p>无法通过工厂函数实际化</p>
+</li>
+<li><p>可以通过for循环访问，每一次循环提取一个数据</p>
+</li>
+<li><p><strong>next</strong>函数也可以在每一次调用时返回一个迭代器里的数据</p>
+</li>
+<li><p>无法再重新生产已经生产出来的数据</p>
+</li>
+<li><p>迭代器访问完了之后就没法再次访问了</p>
+</li>
+<li><p>延时生成数据，啥时候用，啥时候用next或者for循环访问到就行。</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>可迭代的对象(iterable)：可以是抽象的，也可以是具象的</li>
+</ul>
+<ul>
+<li><p>只要数据之间彼此维持了访问顺序</p>
+</li>
+<li><p>我可以通过前一个找到后一个</p>
+</li>
+<li><p>一般由链表构成，或者数组</p>
+</li>
+<li><p>dict、set无序。无法用线性表示其中顺序，树形结构本质是有顺序的</p>
+</li>
+<li><p>只要有__iter__函数，那么都可以通过iter去初始化成一个迭代器</p>
+</li>
+</ul>
+<blockquote>
+<p>可迭代的对象:</p>
+<p>​    list,str,tuple,set,dict,file,sql,range</p>
+<p>​    只需要含有__iter__函数的，都可以称作一个可迭代的对象</p>
+<p>迭代器:</p>
+<p>​    更抽象的数据，其中必须包含__next__函数，也必须包含__iter__</p>
+<p>生成器:</p>
+<p>​    高级的迭代器</p>
+</blockquote>
+<p>##无限迭代器：</p>
+<blockquote>
+<p> 无法被一次性实际化</p>
+</blockquote>
+<ul>
+<li>通过函数自动创建</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line">a = itertools.count() </span><br><span class="line">list(a) <span class="comment">#无法通过工厂函数直接实际化生产数据</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>通过一个序列数据来创建</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mylist = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">b = itertools.cycle(mylist)</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">count(start=<span class="number">0</span>,step=<span class="number">1</span>)  直线</span><br><span class="line">	start：数据起点</span><br><span class="line">	step：数据步长</span><br><span class="line">cycle(iterable) </span><br><span class="line">	iterable：是一个可迭代的数据</span><br></pre></td></tr></table></figure>
+<h2 id="有限迭代器"><a href="#有限迭代器" class="headerlink" title="有限迭代器"></a>有限迭代器</h2><ul>
+<li><p>iter内置函数直接升华具有__iter__内置函数的对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">iter(list|str|tuple|set|dict|file|sql|range)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>模块函数来生产</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> itertools <span class="keyword">import</span> islice</span><br><span class="line">islice(iterable,stop)</span><br><span class="line">islice(iterable,start,stop,[,step])</span><br><span class="line">	取序列的一定范围来创建迭代器</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>只要是一个可迭代的对象，是不是都可以变成迭代器，然后用next来访问</p>
+</li>
+</ul>
+<ul>
+<li><p>for：一定访问的是一个可迭代的对象</p>
+<ul>
+<li>__iter__：检查数据是否是一个可迭代的</li>
+<li>iter()：将可迭代数据升华成为一个迭代器</li>
+<li>next()：每一次for循环都是调用一次next</li>
+<li>for循环的结束其实是捕捉到了StopIteration异常</li>
+</ul>
+</li>
+</ul>
+<h1 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h1><ul>
+<li><p>生成器也是迭代器，只不过是特殊的迭代器</p>
+</li>
+<li><p>生成器创建出来就是直接可以用的</p>
+</li>
+<li><p>元组推导式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">不需要手动维护iter和next函数</span><br><span class="line">gen = (var for var in range(10))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数实现生成器</p>
+<ul>
+<li>yield语句可以在函数内部替换return语句实现生成器</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">yield</span><br><span class="line">	返回结果</span><br><span class="line">	暂停函数</span><br><span class="line"><span class="keyword">return</span></span><br><span class="line">	返回结果</span><br><span class="line">	终止函数</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.760Z"><a href="/2018/07/24/时间模块/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2018/07/24/时间模块/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="时间模块"><a href="#时间模块" class="headerlink" title="时间模块"></a>时间模块</h1><h2 id="time模块-处理精确的秒数较多"><a href="#time模块-处理精确的秒数较多" class="headerlink" title="time模块  处理精确的秒数较多"></a>time模块  处理精确的秒数较多</h2><ul>
+<li><p>时间获取</p>
+</li>
+<li><p>获取精确秒数 </p>
+</li>
+<li><p>时间字符串展示转换</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>time.time()</strong>  -&gt; float_time</p>
+<ul>
+<li>linux时间：从1970年1月1日， 00:00:00</li>
+<li>获取从Unix时间到现在经过的秒数 -&gt; 浮点数</li>
+</ul>
+</li>
+<li><p>time.localtime(float_time)  -&gt; 时间元组</p>
+<ul>
+<li><p>如果不传递参数，那么默认返回本地时间的一个时间元组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">res = time.localtime() -&gt; 时间结果是具备时区的</span><br><span class="line">time.struct_time(</span><br><span class="line">tm_year=2018,  年</span><br><span class="line">tm_mon=6,  月</span><br><span class="line">tm_mday=9,  日</span><br><span class="line">tm_hour=10,  时</span><br><span class="line">tm_min=17,  分</span><br><span class="line">tm_sec=9,  秒</span><br><span class="line">tm_wday=5,  星期几  星期一数字是0 从0开始 表示星期几</span><br><span class="line">tm_yday=160,  今年第几天</span><br><span class="line">tm_isdst=0  夏令时</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">res.tm_year</span><br><span class="line">res.mon</span><br><span class="line">通过返回值的内置属性来获取到对应的值</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>time.sleep(seconds)</p>
+<ul>
+<li>程序休眠，让程序挂起</li>
+<li>seconds参数是一个秒数</li>
+</ul>
+</li>
+<li><p>time.clock()  一般衡量程序的耗时</p>
+<ul>
+<li>win：<ul>
+<li>第一次调用：返回当前的CPU时间</li>
+<li>第二次调用：返回距离上一次调用所花费的时间</li>
+</ul>
+</li>
+<li>linux：<ul>
+<li>直接返回程序运行到执行这个函数所花费的时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>time.asctime(时间元组)</p>
+<ul>
+<li>time.localtime(float_time)  -&gt; 时间元组</li>
+<li>处理时间元组成为一个可读性更好的字符串</li>
+</ul>
+</li>
+<li><p><strong>time.strftime</strong>(格式，时间元组)  -&gt; 良好可读性的字符串</p>
+<ul>
+<li>将时间元组根据你指定的格式来成为一个良好可读性的字符串</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">%Y: 年份 Year</span><br><span class="line">%m: 月份 month</span><br><span class="line">%d: 天数 day</span><br><span class="line"><span class="comment">#年月日，时分秒中，只有月和天是小写的，其他都是大写的</span></span><br><span class="line">%H：时 Hour</span><br><span class="line">%M：分 Minute</span><br><span class="line">%S：秒 Seconds</span><br><span class="line"><span class="comment">#以上六个死记硬背</span></span><br><span class="line"><span class="string">'%Y-%m-%d %H:%M:%S'</span></span><br><span class="line"></span><br><span class="line">%x 月/日/年</span><br><span class="line">%A: 星期的全称英语</span><br><span class="line">%a：星期的缩写英语</span><br><span class="line"></span><br><span class="line">%F 年/月/日</span><br><span class="line">%T 时/分/秒</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>time.strptime</strong>(良好可读性的字符串，格式) -&gt; 时间元组<ul>
+<li>把一个字符串变成时间元组。</li>
+<li>再变回去的时候，要和之前变化的时候一一对应。</li>
+</ul>
+</li>
+<li>strf  将时间元组变成字符串</li>
+<li>strp 将字符串变成时间元组</li>
+<li>时间元组用来被处理，时间字符串只是一个展示的</li>
+</ul>
+<p>##datetime模块</p>
+<ul>
+<li>处理年月日，时分秒的时间创建</li>
+<li>时间差值计算</li>
+<li>时间获取</li>
+</ul>
+<ul>
+<li><p>datetime.datetime</p>
+<ul>
+<li><p>处理年月日，时分秒的</p>
+</li>
+<li><p><strong>datetime.datetime.now()</strong></p>
+</li>
+<li><p>datetime.datetime.today()</p>
+<ul>
+<li>获取当前的时间</li>
+<li>返回值：datetime.datetime类型</li>
+<li>返回值类型支持差值运算，用来求出两个时间区间的秒数，或者说你指定的时间单位</li>
+</ul>
+</li>
+<li><p><strong>datetime.timedelta</strong>(days=99999999,hours=23,minutes=59,seconds=59,)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>我想求出再过20天是啥时候</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; de = datetime.timedelta(days=25)</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; now = datetime.datetime.now()</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; now + de </span><br><span class="line">datetime.datetime(2018, 7, 4, 11, 20, 2, 286059)</span><br><span class="line"><span class="meta">#</span>结果中，会自动把天数，月数向上换算</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>datetime.date</p>
+<ul>
+<li>处理年月日</li>
+<li>datetime.date.today()<ul>
+<li>年月日返回当前时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>datetime.time</p>
+<ul>
+<li>只能处理时分秒</li>
+<li>多用来创建时分秒的时间</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datetime.time(<span class="number">10</span>,<span class="number">50</span>,<span class="number">59</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">创建时间</span><br><span class="line">datetime.datetime(<span class="number">2018</span>,<span class="number">6</span>,<span class="number">6</span>,<span class="number">10</span>,<span class="number">10</span>,<span class="number">59</span>) 创建年月日，时分秒</span><br><span class="line">datetime.date(<span class="number">2018</span>,<span class="number">6</span>,<span class="number">6</span>) 创建年月日</span><br><span class="line">datetime.time(<span class="number">10</span>,<span class="number">50</span>,<span class="number">59</span>) 创建时分秒</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">关于这些返回值，我们都可以通过它的内置属性：</span><br><span class="line">res.year 年</span><br><span class="line">res.month 月</span><br><span class="line">res.day 日</span><br><span class="line">res.hour 时</span><br><span class="line">res.minute 分</span><br><span class="line">res.second 秒</span><br><span class="line">res.weekday() 从0开始表示星期几</span><br><span class="line">res.ctime() 返回时间字符串(国际化处理过的)</span><br><span class="line">res.timetuple() 一个时间元组 </span><br><span class="line">和time.localtime() 所获取到的返回值是一样的</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+
+<nav id="pagination">
+  
+  <nav id="page-nav">
+    <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
+  </nav>
+
+</nav>
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:zhaocs.github.io">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2018/07/24/异常捕获/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/运算符操作符/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/装饰器/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/csv文件操作/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/Python3_基础语法/"></a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2018 豆芽菜
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+</body>
+</html>

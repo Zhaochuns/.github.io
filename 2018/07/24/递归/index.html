@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>豆芽菜的爱的博客</title>
+  <meta name="author" content="豆芽菜" />
+
+  
+  <meta name="description" content="男人可以不帅，但是不能不装逼，装逼很重要" />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  
+  <meta property="og:site_name" content="豆芽菜的爱的博客" />
+
+  
+  
+
+  
+    <meta property="og:image" content="" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="豆芽菜的爱的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">豆芽菜的爱的博客</a></h1>
+  <h2><a href="/">新进菜鸟一个</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.912Z"><a href="/2018/07/24/递归/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><blockquote>
+<p>复习：</p>
+<p>匿名函数</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>lambda 表达式</li>
+<li>lambda a1,a2,a3…. : a1 + a2 + a3 </li>
+<li>lambda表达式返回值是 a1 + a2 + a3 </li>
+<li>lambda表达式在返回多个结果时，要用元组或者列表或者集合或者字典(只要是维护了是一个值的状态即可)</li>
+</ul>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">lambda</span> x,y : [x+<span class="number">1</span>,y+<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">除了def语句在Python中可以实现定义函数</span><br><span class="line">lambda表达式也是可以进行函数的定义</span><br><span class="line">这样创建出来的函数对象：</span><br><span class="line">	1.可以通过保存成额外的变量来调用</span><br><span class="line">	2.也可以保存在一个数据类型中，通过list[index](args) dict[key](args)</span><br></pre></td></tr></table></figure>
+<h3 id="递归的概念"><a href="#递归的概念" class="headerlink" title="递归的概念"></a>递归的概念</h3><blockquote>
+<p>当函数自身包含了对自身的调用，那么就是递归</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">	func()</span><br><span class="line"><span class="comment">#递归有最大上限次数:1000次左右</span></span><br><span class="line">	<span class="comment">#998</span></span><br><span class="line"><span class="comment">#递归每一次都在开启一个新的函数空间</span></span><br></pre></td></tr></table></figure>
+<h3 id="函数内对于全局变量的赋值修改"><a href="#函数内对于全局变量的赋值修改" class="headerlink" title="函数内对于全局变量的赋值修改"></a>函数内对于全局变量的赋值修改</h3><blockquote>
+<p>+= 或者 = 号赋值都会使一个不可变数据类型在函数的局部作用域下成为一个局部变量</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">	a = a + <span class="number">1</span></span><br><span class="line">func()</span><br><span class="line"><span class="comment"># 整个作用域下的a都是来自于同一个作用域的</span></span><br><span class="line">	<span class="comment">#你不能说 第一个a是局部的、第二个a是全局的</span></span><br><span class="line">    <span class="comment">#这样的话，一个a在一个内存空间下可以表示两个值了，这就二义性了</span></span><br><span class="line"><span class="comment"># 现在的a 就是一个局部变量了</span></span><br><span class="line"><span class="comment"># 局部变量a 需要 局部变量a + 1</span></span><br><span class="line"><span class="comment"># 这个代码会报错</span></span><br><span class="line"><span class="comment"># local variable 'a' referenced before assignment</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>李老师怎么来的？李老师 = 李老师+1</p>
+</blockquote>
+<blockquote>
+<p>你得先有了自己，才能加一得出自己</p>
+</blockquote>
+<h3 id="递归一定要确定终止条件"><a href="#递归一定要确定终止条件" class="headerlink" title="递归一定要确定终止条件"></a>递归一定要<strong>确定终止条件</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">index = <span class="number">1</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">global</span> index</span><br><span class="line">        <span class="comment">#声明index为全局变量</span></span><br><span class="line">    <span class="keyword">if</span> index &lt; <span class="number">900</span>: <span class="comment">#递归了900次</span></span><br><span class="line">        print(<span class="string">'hello world:'</span>,index)</span><br><span class="line">        index = index + <span class="number">1</span></span><br><span class="line">        func()<span class="comment">#开启递归</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">'this is last one'</span>)</span><br><span class="line">    <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>递归会非常占用内存，但是递归和循环很类似，那么我们需要递归干啥？</p>
+<p>循环做的事情，递归可以做，但是递归能做的，循环做起来就不一定简单了</p>
+</blockquote>
+<h3 id="递归与循环分别对非线性列表求和"><a href="#递归与循环分别对非线性列表求和" class="headerlink" title="递归与循环分别对非线性列表求和"></a>递归与循环分别对非线性列表求和</h3><blockquote>
+<p>普通循环 for while 一般适用于解决线性循环</p>
+<p>递归的优势在与解决非线性的</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">mylist = [<span class="number">1</span>,<span class="number">2</span>,[<span class="number">3</span>],<span class="number">5</span>,[<span class="number">6</span>,[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>]],<span class="number">1</span>,<span class="number">2</span>] <span class="comment">#-&gt; 44</span></span><br><span class="line"><span class="comment">#试一下用循环求和，</span></span><br><span class="line"><span class="comment">#如果列表变化，那么代码可以兼容，可以直接复用，不能改变</span></span><br><span class="line">mysum = <span class="number">0</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_sum</span><span class="params">(iter)</span>:</span><span class="comment">#接收一个等待求和的多层序列</span></span><br><span class="line">    <span class="comment">#iter 中 无非两种数据类型: list int</span></span><br><span class="line">    <span class="keyword">global</span> mysum</span><br><span class="line">    <span class="keyword">for</span> var <span class="keyword">in</span> iter:</span><br><span class="line">        <span class="keyword">if</span> type(var) == int: <span class="comment">#当前取出来的数据是int</span></span><br><span class="line">        <span class="comment">#if type(var) == type([])</span></span><br><span class="line">            mysum += var</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            get_sum(var) <span class="comment">#遇到的又是一个列表，那么我们继续遍历</span></span><br><span class="line">    <span class="comment">#for循环结束的时候，递归结束</span></span><br><span class="line">get_sum(mylist)</span><br><span class="line">print(mysum)</span><br></pre></td></tr></table></figure>
+<h3 id="递归的小练习"><a href="#递归的小练习" class="headerlink" title="递归的小练习"></a>递归的小练习</h3><ul>
+<li>你现在做的事情，就是你将要做的，那么就可以用递归</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">mylist = [<span class="string">'asdazxc'</span>,<span class="string">'adxzc'</span>,[<span class="string">'12390145fcsdjfhzkjxcmnasd'</span>,<span class="string">'123987189asjkdsajkb'</span>],<span class="string">'asdqwewqerq'</span>,[<span class="string">'asd890q8390'</span>],<span class="string">'asdhquiweqysa'</span>,<span class="string">'asdhjkzhxjkckjasdh'</span>]</span><br><span class="line"><span class="comment">#把一样的提出来</span></span><br><span class="line"><span class="comment">#统计每一个出现的字符出现的次数</span></span><br><span class="line"><span class="comment">#for循环实现</span></span><br><span class="line">dict_num = &#123;&#125;</span><br><span class="line"><span class="comment">#key:对应的字符</span></span><br><span class="line"><span class="comment">#value:出现的次数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_num</span><span class="params">(seq)</span>:</span></span><br><span class="line">    <span class="comment">#字典是可变数据类型，所以直接可以在函数作用域内进行修改</span></span><br><span class="line">    <span class="keyword">for</span> var <span class="keyword">in</span> seq: <span class="comment">#遍历整个列表数据</span></span><br><span class="line">        <span class="keyword">if</span> type(var) == list:</span><br><span class="line">            <span class="comment">#如果取出来的还是一个列表，那么就继续递归</span></span><br><span class="line">            get_num(var)</span><br><span class="line">        <span class="keyword">else</span>: <span class="comment">#如果碰到的是一个字符串</span></span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> var:  <span class="comment">#遍历字符串，记录次数</span></span><br><span class="line">                <span class="keyword">if</span> i <span class="keyword">in</span> dict_num:</span><br><span class="line">                    <span class="comment"># 如果获取到的字符，已经存在了字典中，那么他的次数+1</span></span><br><span class="line">                    dict_num[i] = dict_num[i] + <span class="number">1</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="comment"># 如果获取到的字符没出现过，那么就创建默认值1就行</span></span><br><span class="line">                    dict_num[i] = <span class="number">1</span></span><br><span class="line">get_num(mylist)</span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> dict_num:</span><br><span class="line">    print(key,<span class="string">':'</span>,dict_num[key])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#回文判断</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">p_h_2</span><span class="params">(obj)</span>:</span></span><br><span class="line">    <span class="comment">#7 - 1 / 2 = 3</span></span><br><span class="line">    <span class="comment">#7 / 2 - 1  /  2   #结果少了小数点后的</span></span><br><span class="line">    index = len(obj) // <span class="number">2</span> <span class="comment">#取出中间索引位置</span></span><br><span class="line">    <span class="comment">#取出下一半字符串</span></span><br><span class="line">    b = obj[index:] <span class="keyword">if</span> <span class="keyword">not</span> (len(obj) &amp; <span class="number">1</span>) <span class="keyword">else</span> obj[index+<span class="number">1</span>:]</span><br><span class="line">        <span class="comment">#判断是否是奇或 偶数位</span></span><br><span class="line">        <span class="comment">#三元表达式 当 if条件成立，那么返回左边的，反之返回右边的</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">True</span> <span class="keyword">if</span> obj[:index] == b[::<span class="number">-1</span>] <span class="keyword">else</span> <span class="keyword">False</span></span><br><span class="line">print(p_h_2(mystr))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#递归回文判断</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">p_h</span><span class="params">(obj)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> len(obj) &lt; <span class="number">2</span>: <span class="comment">#'a'</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span> <span class="comment">#返回 结束</span></span><br><span class="line">    <span class="keyword">elif</span> obj[<span class="number">0</span>] != obj[<span class="number">-1</span>]:</span><br><span class="line">        <span class="comment">#如果判断对应索引位置的值不一样，那么就返回False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="comment"># 现在我判断完了0和-1位置，是不是就可以不要他们了</span></span><br><span class="line">    <span class="keyword">return</span> p_h(obj[<span class="number">1</span>:<span class="number">-1</span>])</span><br><span class="line">print(p_h(mystr))</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:zhaocs.github.io">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2018/07/24/异常捕获/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/运算符操作符/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/装饰器/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/csv文件操作/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/Python3_基础语法/"></a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2018 豆芽菜
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+</body>
+</html>

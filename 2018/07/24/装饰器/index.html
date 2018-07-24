@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>豆芽菜的爱的博客</title>
+  <meta name="author" content="豆芽菜" />
+
+  
+  <meta name="description" content="男人可以不帅，但是不能不装逼，装逼很重要" />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  
+  <meta property="og:site_name" content="豆芽菜的爱的博客" />
+
+  
+  
+
+  
+    <meta property="og:image" content="" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="豆芽菜的爱的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">豆芽菜的爱的博客</a></h1>
+  <h2><a href="/">新进菜鸟一个</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:54.034Z"><a href="/2018/07/24/装饰器/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="装饰器"><a href="#装饰器" class="headerlink" title="装饰器"></a>装饰器</h1><ul>
+<li>装饰器可以在<strong>函数运行前添加功能，并且不影响原有函数内容</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">@wai #装饰下面定义的函数</span><br><span class="line">def func():</span><br><span class="line">	print(&apos;哈哈哈哈&apos;)</span><br><span class="line"></span><br><span class="line">func() #-&gt;  哈哈哈哈</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">函数三要素</span><br><span class="line">def func(arg): <span class="comment">#定义</span></span><br><span class="line">	var = arg ** <span class="number">2</span></span><br><span class="line">	<span class="keyword">return</span> var</span><br><span class="line">函数名: func</span><br><span class="line">函数参数(形参)：arg</span><br><span class="line">函数返回值: arg</span><br><span class="line">默认的，如果没有函数内的<span class="keyword">return</span>语句，函数默认返回None</span><br><span class="line"></span><br><span class="line">res = func(<span class="number">10</span>) <span class="comment">#执行</span></span><br><span class="line">函数名：func</span><br><span class="line">返回值：res</span><br><span class="line">参数(实参)：<span class="number">10</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>func：函数对象</li>
+<li>func() ：函数调用</li>
+</ul>
+<h2 id="普通装饰器"><a href="#普通装饰器" class="headerlink" title="普通装饰器"></a>普通装饰器</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wai</span><span class="params">(func)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">nei</span><span class="params">()</span>:</span></span><br><span class="line">        res = func()</span><br><span class="line">        <span class="keyword">return</span> res + <span class="string">'你好'</span></span><br><span class="line">    <span class="keyword">return</span> nei</span><br><span class="line"></span><br><span class="line"><span class="meta">@wai</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'123'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">123</span></span><br><span class="line">res = func()</span><br></pre></td></tr></table></figure>
+<h2 id="被装饰函数带参数"><a href="#被装饰函数带参数" class="headerlink" title="被装饰函数带参数"></a>被装饰函数带参数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wai</span><span class="params">(func)</span>:</span> <span class="comment">#装饰器</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">nei</span><span class="params">(var1,var2)</span>:</span></span><br><span class="line">        var1 = <span class="number">100</span>  <span class="comment">#在闭包函数内部对被装饰函数参数进行干预</span></span><br><span class="line">        var2 = <span class="number">99</span></span><br><span class="line">        <span class="keyword">return</span> func(var1,var2)</span><br><span class="line">    <span class="keyword">return</span> nei</span><br><span class="line"></span><br><span class="line"><span class="meta">@wai</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work</span><span class="params">(a,b)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line">res = work(<span class="number">20</span>,<span class="number">30</span>)  <span class="comment">#wai(work)(a,b)</span></span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
+<h2 id="装饰器函数也可以有参数"><a href="#装饰器函数也可以有参数" class="headerlink" title="装饰器函数也可以有参数"></a>装饰器函数也可以有参数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#商品</span></span><br><span class="line">mind = <span class="keyword">True</span></span><br><span class="line">zhekou = <span class="number">0.9</span> <span class="comment">#折扣的数值</span></span><br><span class="line">youhuiquan = <span class="number">5</span></span><br><span class="line"><span class="comment"># 当你的装饰器函数也需要参数的时候，只需要多一层包装即可</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dazhe</span><span class="params">(con,zk,yhq)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wai</span><span class="params">(func)</span>:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">nei</span><span class="params">(money)</span>:</span></span><br><span class="line">            print(<span class="string">'-----------'</span>)</span><br><span class="line">            <span class="keyword">if</span> con:</span><br><span class="line">                print(<span class="string">'打折!'</span>)</span><br><span class="line">                money = money * zk</span><br><span class="line">            <span class="keyword">elif</span> yhq:</span><br><span class="line">                print(<span class="string">"优惠券！"</span>)</span><br><span class="line">                money = money - yhq</span><br><span class="line">            <span class="keyword">return</span> func(money)</span><br><span class="line">        <span class="keyword">return</span> nei</span><br><span class="line">    <span class="keyword">return</span> wai</span><br><span class="line"><span class="comment">#dazhe -&gt; wai</span></span><br><span class="line"><span class="comment">#wai -&gt; nei</span></span><br><span class="line"><span class="comment">#nei -&gt; func()</span></span><br><span class="line"><span class="meta">@dazhe(mind,zhekou,youhuiquan)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">apple</span><span class="params">(money)</span>:</span></span><br><span class="line">    print(<span class="string">'苹果的价钱是:%d'</span> % money)</span><br><span class="line">    <span class="keyword">return</span> money</span><br><span class="line"></span><br><span class="line"><span class="meta">@dazhe(mind,zhekou,youhuiquan)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pants</span><span class="params">(money)</span>:</span></span><br><span class="line">    print(<span class="string">'裤子的价钱是:%d'</span> % money)</span><br><span class="line">    <span class="keyword">return</span> money</span><br><span class="line"></span><br><span class="line"><span class="meta">@dazhe(mind,zhekou,youhuiquan)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">skirt</span><span class="params">(money)</span>:</span></span><br><span class="line">    print(<span class="string">'裙子的价钱是:%d'</span> % money)</span><br><span class="line">    <span class="keyword">return</span> money</span><br><span class="line"></span><br><span class="line">apple(<span class="number">10</span>)</span><br><span class="line">pants(<span class="number">50</span>)</span><br><span class="line">skirt(<span class="number">100</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'123'</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    work() <span class="comment">#== '123'</span></span><br><span class="line"></span><br><span class="line">func() <span class="comment">#问题：返回值是啥？</span></span><br><span class="line"><span class="comment">#答案：None</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">wai</span><span class="params">(b_func)</span>:</span> <span class="comment">#外函数的参数是一个函数对象</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">nei</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">"嘿嘿嘿"</span>) <span class="comment">#在nei函数里写的代码基本上都是添加的功能</span></span><br><span class="line">        <span class="keyword">return</span> b_func() <span class="comment">#这个是nei函数返回值，用来返回之前在wai函数所接收的参数</span></span><br><span class="line">        <span class="comment">#b_func()</span></span><br><span class="line">        <span class="comment">#return ''</span></span><br><span class="line">    <span class="keyword">return</span> nei <span class="comment">#返回了wai函数里的这个定义好的闭包容器</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@wai #语法糖</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'哈哈哈哈'</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'func'</span></span><br><span class="line"></span><br><span class="line">res = func() <span class="comment">#调用一个被装饰函数 其实相等于 wai(func)()</span></span><br><span class="line">print(<span class="string">'func的返回值:'</span>,res)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#func() 传统函数调用</span></span><br><span class="line">    <span class="comment">#1: print('哈哈哈')</span></span><br><span class="line">    <span class="comment">#2: return None</span></span><br><span class="line"><span class="comment">#func() 被装饰时调用 @wai</span></span><br><span class="line">    <span class="comment">#被装饰函数: func</span></span><br><span class="line">    <span class="comment">#装饰器函数: wai</span></span><br><span class="line">    <span class="comment">#1: wai(func) -&gt; return nei</span></span><br><span class="line">    <span class="comment">#2: nei() -&gt;</span></span><br><span class="line">        <span class="comment">#1: print("嘿嘿嘿")</span></span><br><span class="line">        <span class="comment">#2: return b_func()</span></span><br><span class="line">            <span class="comment">#1: b_func() -&gt; 'func'  #内部调用被装饰函数</span></span><br><span class="line">            <span class="comment">#2: return 'func' #内部闭包函数的返回值 其实是被装饰函数的返回值</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:zhaocs.github.io">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2018/07/24/异常捕获/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/运算符操作符/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/装饰器/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/csv文件操作/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/Python3_基础语法/"></a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2018 豆芽菜
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+</body>
+</html>

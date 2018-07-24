@@ -1,0 +1,276 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>豆芽菜的爱的博客</title>
+  <meta name="author" content="豆芽菜" />
+
+  
+  <meta name="description" content="男人可以不帅，但是不能不装逼，装逼很重要" />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  
+  <meta property="og:site_name" content="豆芽菜的爱的博客" />
+
+  
+  
+
+  
+    <meta property="og:image" content="" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="豆芽菜的爱的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">豆芽菜的爱的博客</a></h1>
+  <h2><a href="/">新进菜鸟一个</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.716Z"><a href="/2018/07/24/文件操作/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="文件操作"><a href="#文件操作" class="headerlink" title="文件操作"></a>文件操作</h1><ul>
+<li>普通文本文件操作</li>
+</ul>
+<blockquote>
+<p>os.rename() os模块重命名文件</p>
+<p>.xml .xml.bak .ini .ini.bak</p>
+</blockquote>
+<p>文件系统：NTFS EXT3 EXT4 XFS FAT32</p>
+<p>​    表明了路径的长度，255个字符</p>
+<p>​    单文件的最大大小</p>
+<p>​    文件夹下的文件个数</p>
+<p>操作系统：</p>
+<p>​    平台</p>
+<ul>
+<li><p>文件在哪里？</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">所有的文件都是在磁盘上的！</span><br><span class="line">CPU只能处理在内存中的数据，也就是说，CPU无法直接去阅读磁盘里的文件</span><br><span class="line">CPU &lt;-&gt; MEM &lt;-&gt; DISK</span><br><span class="line"></span><br><span class="line">离CPU越快处理速度越快</span><br><span class="line">	南桥 和IO设备 慢一些</span><br><span class="line">	北桥 和CPU通信  更快</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>文件操作，在程序里都是对内存中的文件进行操作！</p>
+<ul>
+<li><p>创建文件</p>
+</li>
+<li><p>第一步：打开文件</p>
+<blockquote>
+<p>把磁盘中的文件拿到内存中</p>
+</blockquote>
+<ul>
+<li><p>fp = open(path, mode=’r’)</p>
+<ul>
+<li><p>path: 需要打开文件的路径</p>
+</li>
+<li><p>mode: 打开文件所使用的权限</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">读：r read</span><br><span class="line">	提供读操作	</span><br><span class="line">	单纯的读权限打开不存在文件，会直接报错</span><br><span class="line">写：w write</span><br><span class="line">	提供写操作</span><br><span class="line">追加：a append</span><br><span class="line">	类似与写权限，只提供对于文件的写操作</span><br><span class="line">在权限参数的传递过程中，如果只是单纯的给了一个权限，那么其他权限不享有</span><br><span class="line">如果我读写兼备，那么只需要在权限补充一个+号</span><br><span class="line">r+</span><br><span class="line">w+ </span><br><span class="line">a+</span><br></pre></td></tr></table></figure>
+<ul>
+<li>写文件：配置文件，日志</li>
+<li>读文件：音频文件，video，img</li>
+</ul>
+</li>
+<li><p>文本文件是即可以读，也可以写</p>
+</li>
+<li><p>open函数返回的是一个文件的句柄</p>
+</li>
+<li><p>（不是完全的文件展开体，只是一个可以导出整个文件的头指针）</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>第二步：</p>
+<ul>
+<li><p>读</p>
+<ul>
+<li><p>fp.read(num)</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">函数直接阅读整个文件，并返回整个文件为一个字符串</span><br><span class="line">把整个文件读到了内存</span><br><span class="line">如果给read函数传递了num变量</span><br><span class="line">那么他是通过num来读取对应文件中的指定字符个数</span><br><span class="line">read函数获取到的文件内容会保留行末尾的\n\r</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>fp.readline()</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">readline函数一次可以读取文件中的一行内容</span><br><span class="line">当遇到了\n\r则停止，代表当前是一行了</span><br><span class="line">当遇到了EOF（文件结束标志）</span><br><span class="line">readline如果去读取超过文件本身行数的次数，那么不会报错，只会返回空</span><br><span class="line">readline不会一次性把整个文件展开在内存</span><br><span class="line">但是需要我们手动的维护行数</span><br><span class="line">readline函数在获取到文件内容的每一行后，也会保留结尾的\r\n</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">now_index = <span class="number">0</span></span><br><span class="line">perv_index = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    print(fp.readline())</span><br><span class="line">    perv_index = now_index <span class="comment">#上次的index值先保留一下</span></span><br><span class="line">    now_index = fp.tell() <span class="comment">#这一次访问到的文件index是fp.tell()</span></span><br><span class="line">    <span class="keyword">if</span> perv_index == now_index:</span><br><span class="line">        print(<span class="string">'上一次和这一次的文件读写指针位置是一样的.'</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">    res = fp.readline()</span><br><span class="line">    <span class="keyword">if</span> res == <span class="string">''</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    print(res)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>  * fp.readlines()
+
+    <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">返回了字符串列表</span><br><span class="line">列表中每一个元素都是一行的数据</span><br><span class="line">并且保留行末尾的换行符号</span><br></pre></td></tr></table></figure>
+
+
+
+* 写
+</code></pre><ul>
+<li><p>Python中自动维护了一个叫做读写指针的东西</p>
+<ul>
+<li>这个读写指针会自动的根据你访问文件的量来进行向后移动</li>
+</ul>
+</li>
+<li><p>关闭文件</p>
+<ul>
+<li>fp.close()  </li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">操作系统对于</span><br><span class="line">一个进程</span><br><span class="line">当前的操作系统</span><br><span class="line">	对于当前打开的最大文件数字是有要求的，维护文件句柄（读写指针，文件权限，打开者的用户是谁）</span><br><span class="line">进程 PID 65535</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>获取文件读写指针位置</p>
+<ul>
+<li>fp.tell()</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">获取文件读写指针的位置</span><br><span class="line">返回值获取到的是读写指针的字节数位置</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>with as</strong>语句可以自动帮助你做资源的创建及释放</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">'1'</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    <span class="comment">#打开文件1，并且讲打开的文件句柄保存成fp</span></span><br><span class="line">    <span class="comment">#as 也叫做起别名</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">'hello world'</span>)</span><br><span class="line">    fp.read()</span><br><span class="line">print(<span class="string">'123'</span>)</span><br><span class="line"><span class="comment">#当你离开了with as的缩进语句</span></span><br><span class="line">    <span class="comment">#文件自动关闭</span></span><br><span class="line"><span class="comment">#上下文管理语句：</span></span><br><span class="line">    <span class="comment">#打开  关闭</span></span><br><span class="line">    <span class="comment">#穿上  脱下</span></span><br><span class="line">    <span class="comment">#起床  睡觉</span></span><br><span class="line">    <span class="comment">#发散到生活</span></span><br><span class="line"><span class="comment">#with as语句会自动帮你做资源的释放</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#lambda 函数 适宜用来 编写简单函数</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="字符串的字符数"><a href="#字符串的字符数" class="headerlink" title="字符串的字符数"></a>字符串的字符数</h3><blockquote>
+<p>你好  2个， 数个数的</p>
+</blockquote>
+<blockquote>
+<p>abc   3个，数个数</p>
+</blockquote>
+<h3 id="字符串的字节数"><a href="#字符串的字节数" class="headerlink" title="字符串的字节数"></a>字符串的字节数</h3><blockquote>
+<p>你好 4+ </p>
+<p>abc  3 </p>
+</blockquote>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:zhaocs.github.io">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2018/07/24/异常捕获/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/运算符操作符/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/装饰器/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/csv文件操作/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/Python3_基础语法/"></a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2018 豆芽菜
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+</body>
+</html>

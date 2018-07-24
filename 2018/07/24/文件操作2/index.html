@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>豆芽菜的爱的博客</title>
+  <meta name="author" content="豆芽菜" />
+
+  
+  <meta name="description" content="男人可以不帅，但是不能不装逼，装逼很重要" />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  
+  <meta property="og:site_name" content="豆芽菜的爱的博客" />
+
+  
+  
+
+  
+    <meta property="og:image" content="" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="豆芽菜的爱的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">豆芽菜的爱的博客</a></h1>
+  <h2><a href="/">新进菜鸟一个</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.568Z"><a href="/2018/07/24/文件操作2/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="文件操作下"><a href="#文件操作下" class="headerlink" title="文件操作下"></a>文件操作下</h1><h1 id="每一次对文件的访问都是访问磁盘中的"><a href="#每一次对文件的访问都是访问磁盘中的" class="headerlink" title="每一次对文件的访问都是访问磁盘中的"></a>每一次对文件的访问都是访问磁盘中的</h1><blockquote>
+<p>fp  = open() -&gt; 返回了一个文件句柄</p>
+<p>​ r：读文件</p>
+<blockquote>
+<p>read(字符数)  split(‘\n’)</p>
+<p>readline()  </p>
+<p>readlines()  返回了一个文件中的字符串列表，以一行行的格式存储，那么这里列表就是每一行</p>
+<p>fp.close()  关闭文件句柄 释放资源  Linux下面一个进程能打开的最大文件数是有上限的</p>
+</blockquote>
+</blockquote>
+<p>​    当你的程序结束的时候，进程就没了，那么进程所</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">with open(<span class="string">'1.txt'</span>,<span class="string">'w'</span>) as fp:</span><br><span class="line">	<span class="keyword">for</span> var <span class="keyword">in</span> range(<span class="number">10000</span>):</span><br><span class="line">		fp.write(var)</span><br><span class="line">		</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> range(<span class="number">10000</span>):	</span><br><span class="line">	fp = open(<span class="string">'1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">	write(<span class="string">'var'</span>) <span class="comment">#打开了一万次文件</span></span><br><span class="line">	<span class="comment">#fp.close()</span></span><br><span class="line"><span class="comment">#我每一次打开了之后 我下次又会重新覆盖了之前的fp文件对象</span></span><br><span class="line"><span class="comment">#每一次都使用一个新的</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>写文件：读写公用同一个指针</p>
+<ul>
+<li>w：write 改权限可以让我们打开一个文件，进行写入，但是每一次打开都会将之前的文件内容清空<ul>
+<li>w可以清空文件</li>
+</ul>
+</li>
+<li>a：append 追加，读写指针在文件末尾</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">fp.write(str) -&gt; 成功写入缓冲区中的字符数</span><br><span class="line">	用来向文件写入str</span><br><span class="line">	write函数在写入文件内容的时候，不会自动的带换行\r\n</span><br><span class="line">fp.writelines(str_lines) -&gt; 成功时返回None，反之则报错</span><br><span class="line">	用来向文件写入字符串列表</span><br><span class="line">	而且列表中的每一个字符串数据不会自动加换行</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>缓冲区( 内存(临时) )  针对读写文件 </p>
+<ul>
+<li>保护设备</li>
+<li>让效率慢的和效率快的组件之间可以协同工作，缓和速度之间的矛盾</li>
+</ul>
+<p>磁盘的寿命由什么决定：写次数</p>
+<ul>
+<li>当你关闭文件的时候，缓冲区中的内容会刷新到磁盘上</li>
+<li>手动刷新缓冲区：fp.flush()</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 磁盘是保存数据的</span><br><span class="line">- 内存是流通数据的</span><br><span class="line">- CPU才是真正计算数据的</span><br><span class="line">- CPU处理内存中的数据，而内存中的数据来自于磁盘</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>缓存：为了提高数据流通速度</p>
+<p>缓存是在CPU里有</p>
+<p>缓存是一块超级告诉的数据流通空间（类似内存），但是太贵了，所以电脑上缓存空间一般不大</p>
+<p>L1：CPU经常从L1中拿取数据、控制线程和进程</p>
+<p>L2：存储数据</p>
+<p>L3：管控内存</p>
+</li>
+<li><p>读写指针修改：fp.seek() </p>
+<ul>
+<li>Python中文件读写指针共享 </li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fp.seek(offset,when)</span><br><span class="line">offset：偏移量</span><br><span class="line">	字节为单位</span><br><span class="line">when: 从哪里开始移动</span><br><span class="line">	<span class="number">0</span>:文件开头</span><br><span class="line">	<span class="number">1</span>:当前位置</span><br><span class="line">	<span class="number">2</span>:文件末尾</span><br><span class="line">a模式下的文件末尾读写指针如何移动到文件头部呢？</span><br><span class="line">fp.seek(<span class="number">0</span>,<span class="number">0</span>) -&gt; 回到了文件开头</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>读写指针位置获取：fp.tell()</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fp.tell()</span><br><span class="line">	返回的也是一个字节单位</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>权限的总结</p>
+<ul>
+<li>r+</li>
+<li>w+</li>
+<li>a+</li>
+</ul>
+<blockquote>
+<p>当你对权限具备加号，那么它将补充没有的权限</p>
+</blockquote>
+<ul>
+<li>rb</li>
+<li>wb</li>
+<li>ab</li>
+</ul>
+<blockquote>
+<p>分别以二进制权限打开文件，一般处理：图像，音频，视频</p>
+</blockquote>
+</li>
+<li><p>不同权限下读写指针位置：</p>
+<ul>
+<li>r: 文件开头</li>
+<li>w: 文件开头</li>
+<li>a: 文件末尾</li>
+</ul>
+</li>
+</ul>
+<p>打开文本文件时它会自动识别并剔除BOM </p>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:zhaocs.github.io">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2018/07/24/异常捕获/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/运算符操作符/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/装饰器/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/csv文件操作/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/Python3_基础语法/"></a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2018 豆芽菜
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+</body>
+</html>

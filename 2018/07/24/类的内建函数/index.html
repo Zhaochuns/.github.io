@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>豆芽菜的爱的博客</title>
+  <meta name="author" content="豆芽菜" />
+
+  
+  <meta name="description" content="男人可以不帅，但是不能不装逼，装逼很重要" />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  
+  <meta property="og:site_name" content="豆芽菜的爱的博客" />
+
+  
+  
+
+  
+    <meta property="og:image" content="" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="豆芽菜的爱的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">豆芽菜的爱的博客</a></h1>
+  <h2><a href="/">新进菜鸟一个</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.794Z"><a href="/2018/07/24/类的内建函数/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h2 id="类中内建函数"><a href="#类中内建函数" class="headerlink" title="类中内建函数"></a>类中内建函数</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">python的构造函数是 __new__函数  不是__init__</span><br><span class="line"></span><br><span class="line">__new__(cls): 构造器 Python自动帮你维护 </span><br><span class="line">用于控制实例的生产 </span><br><span class="line">	<span class="number">1</span>: 空间的初始化</span><br><span class="line">	<span class="number">2</span>: 在实例化过程中自动执行</span><br><span class="line">	<span class="number">3</span>: new函数的返回值就是创建出来的实例</span><br><span class="line">	<span class="number">4</span>: 类级别的函数</span><br><span class="line">	</span><br><span class="line">*__init__(self): 数据初始化 </span><br><span class="line">	<span class="number">1</span>: 数据初始化</span><br><span class="line">	<span class="number">2</span>: 自动化实例化过程中运行</span><br><span class="line">	<span class="number">3</span>: 不允许返回除了None以外的任何对象</span><br><span class="line"></span><br><span class="line">__del__(self): 析构器 Python自动帮你维护</span><br><span class="line">用来在实例释放的时候自动调用。</span><br><span class="line">	<span class="comment"># 手动del</span></span><br><span class="line">	<span class="comment"># 程序运行结束</span></span><br><span class="line">将实例所占有的内存及引用计数释放。</span><br><span class="line"></span><br><span class="line"><span class="comment">#a = A()</span></span><br><span class="line">    <span class="comment">#1: a = A.__new__()  创建实例</span></span><br><span class="line">    <span class="comment">#a.__init__()  分配数据</span></span><br><span class="line"></span><br><span class="line">del： 删除变量名，引用计数减<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__new__</span><span class="params">(cls)</span>:</span></span><br><span class="line">        print(<span class="string">'空间初始化...'</span>)</span><br><span class="line">        <span class="comment">#Python不需要你重写这个函数</span></span><br><span class="line">        <span class="comment">#真正的创建实例</span></span><br><span class="line">        <span class="keyword">return</span> super(A,cls).__new__(cls)</span><br><span class="line">            <span class="comment">#1: 找到类A的父类 super(A,cls)</span></span><br><span class="line">            <span class="comment">#2: 通过类A的父类实例的对象 生产出类A的实例 object.__new__(cls)</span></span><br><span class="line">            </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">'我是数据初始化函数...'</span>)</span><br><span class="line">        self.a = <span class="number">1</span></span><br><span class="line">        </span><br><span class="line">   	<span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">del</span> self.a</span><br><span class="line">        print(<span class="string">'我是析构函数...'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__call__(self) </span><br><span class="line">	重载了() 函数调用的符号</span><br><span class="line">	一旦在类中维护了__call__(self)</span><br><span class="line">	那么代表这个类的实例可以做函数直接调用</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">__slots__ 用来锁定类的属性</span><br><span class="line">__slots__ = (<span class="string">'meat'</span>,<span class="string">'egg'</span>,<span class="string">'juice'</span>)</span><br><span class="line">	<span class="comment">#实例只能拥有在slots中定义的值meat，egg，juice</span></span><br><span class="line">类的锁定属性__slots__ 是可以被继承，但是无法在子类中生效</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@proporty</span><br><span class="line">	<span class="comment">#可以把类中方法 直接作为实例属性来使用</span></span><br><span class="line">	<span class="comment">#当含有参数时，会报错</span></span><br><span class="line">		<span class="comment">#TypeError: func() missing 1 required positional argument: 'a'</span></span><br><span class="line">		</span><br><span class="line">@staticmethod</span><br><span class="line">	<span class="comment">#静态方法</span></span><br><span class="line">@classmethod</span><br><span class="line">	<span class="comment">#类的高级方法</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:zhaocs.github.io">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2018/07/24/异常捕获/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/运算符操作符/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/装饰器/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/csv文件操作/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/Python3_基础语法/"></a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2018 豆芽菜
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+</body>
+</html>

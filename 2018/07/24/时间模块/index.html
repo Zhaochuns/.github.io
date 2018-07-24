@@ -1,0 +1,275 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>豆芽菜的爱的博客</title>
+  <meta name="author" content="豆芽菜" />
+
+  
+  <meta name="description" content="男人可以不帅，但是不能不装逼，装逼很重要" />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  
+  <meta property="og:site_name" content="豆芽菜的爱的博客" />
+
+  
+  
+
+  
+    <meta property="og:image" content="" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="豆芽菜的爱的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">豆芽菜的爱的博客</a></h1>
+  <h2><a href="/">新进菜鸟一个</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:53.760Z"><a href="/2018/07/24/时间模块/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="时间模块"><a href="#时间模块" class="headerlink" title="时间模块"></a>时间模块</h1><h2 id="time模块-处理精确的秒数较多"><a href="#time模块-处理精确的秒数较多" class="headerlink" title="time模块  处理精确的秒数较多"></a>time模块  处理精确的秒数较多</h2><ul>
+<li><p>时间获取</p>
+</li>
+<li><p>获取精确秒数 </p>
+</li>
+<li><p>时间字符串展示转换</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>time.time()</strong>  -&gt; float_time</p>
+<ul>
+<li>linux时间：从1970年1月1日， 00:00:00</li>
+<li>获取从Unix时间到现在经过的秒数 -&gt; 浮点数</li>
+</ul>
+</li>
+<li><p>time.localtime(float_time)  -&gt; 时间元组</p>
+<ul>
+<li><p>如果不传递参数，那么默认返回本地时间的一个时间元组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">res = time.localtime() -&gt; 时间结果是具备时区的</span><br><span class="line">time.struct_time(</span><br><span class="line">tm_year=2018,  年</span><br><span class="line">tm_mon=6,  月</span><br><span class="line">tm_mday=9,  日</span><br><span class="line">tm_hour=10,  时</span><br><span class="line">tm_min=17,  分</span><br><span class="line">tm_sec=9,  秒</span><br><span class="line">tm_wday=5,  星期几  星期一数字是0 从0开始 表示星期几</span><br><span class="line">tm_yday=160,  今年第几天</span><br><span class="line">tm_isdst=0  夏令时</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">res.tm_year</span><br><span class="line">res.mon</span><br><span class="line">通过返回值的内置属性来获取到对应的值</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>time.sleep(seconds)</p>
+<ul>
+<li>程序休眠，让程序挂起</li>
+<li>seconds参数是一个秒数</li>
+</ul>
+</li>
+<li><p>time.clock()  一般衡量程序的耗时</p>
+<ul>
+<li>win：<ul>
+<li>第一次调用：返回当前的CPU时间</li>
+<li>第二次调用：返回距离上一次调用所花费的时间</li>
+</ul>
+</li>
+<li>linux：<ul>
+<li>直接返回程序运行到执行这个函数所花费的时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>time.asctime(时间元组)</p>
+<ul>
+<li>time.localtime(float_time)  -&gt; 时间元组</li>
+<li>处理时间元组成为一个可读性更好的字符串</li>
+</ul>
+</li>
+<li><p><strong>time.strftime</strong>(格式，时间元组)  -&gt; 良好可读性的字符串</p>
+<ul>
+<li>将时间元组根据你指定的格式来成为一个良好可读性的字符串</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">%Y: 年份 Year</span><br><span class="line">%m: 月份 month</span><br><span class="line">%d: 天数 day</span><br><span class="line"><span class="comment">#年月日，时分秒中，只有月和天是小写的，其他都是大写的</span></span><br><span class="line">%H：时 Hour</span><br><span class="line">%M：分 Minute</span><br><span class="line">%S：秒 Seconds</span><br><span class="line"><span class="comment">#以上六个死记硬背</span></span><br><span class="line"><span class="string">'%Y-%m-%d %H:%M:%S'</span></span><br><span class="line"></span><br><span class="line">%x 月/日/年</span><br><span class="line">%A: 星期的全称英语</span><br><span class="line">%a：星期的缩写英语</span><br><span class="line"></span><br><span class="line">%F 年/月/日</span><br><span class="line">%T 时/分/秒</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>time.strptime</strong>(良好可读性的字符串，格式) -&gt; 时间元组<ul>
+<li>把一个字符串变成时间元组。</li>
+<li>再变回去的时候，要和之前变化的时候一一对应。</li>
+</ul>
+</li>
+<li>strf  将时间元组变成字符串</li>
+<li>strp 将字符串变成时间元组</li>
+<li>时间元组用来被处理，时间字符串只是一个展示的</li>
+</ul>
+<p>##datetime模块</p>
+<ul>
+<li>处理年月日，时分秒的时间创建</li>
+<li>时间差值计算</li>
+<li>时间获取</li>
+</ul>
+<ul>
+<li><p>datetime.datetime</p>
+<ul>
+<li><p>处理年月日，时分秒的</p>
+</li>
+<li><p><strong>datetime.datetime.now()</strong></p>
+</li>
+<li><p>datetime.datetime.today()</p>
+<ul>
+<li>获取当前的时间</li>
+<li>返回值：datetime.datetime类型</li>
+<li>返回值类型支持差值运算，用来求出两个时间区间的秒数，或者说你指定的时间单位</li>
+</ul>
+</li>
+<li><p><strong>datetime.timedelta</strong>(days=99999999,hours=23,minutes=59,seconds=59,)</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>我想求出再过20天是啥时候</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; de = datetime.timedelta(days=25)</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; now = datetime.datetime.now()</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt; now + de </span><br><span class="line">datetime.datetime(2018, 7, 4, 11, 20, 2, 286059)</span><br><span class="line"><span class="meta">#</span>结果中，会自动把天数，月数向上换算</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>datetime.date</p>
+<ul>
+<li>处理年月日</li>
+<li>datetime.date.today()<ul>
+<li>年月日返回当前时间</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>datetime.time</p>
+<ul>
+<li>只能处理时分秒</li>
+<li>多用来创建时分秒的时间</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datetime.time(<span class="number">10</span>,<span class="number">50</span>,<span class="number">59</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">创建时间</span><br><span class="line">datetime.datetime(<span class="number">2018</span>,<span class="number">6</span>,<span class="number">6</span>,<span class="number">10</span>,<span class="number">10</span>,<span class="number">59</span>) 创建年月日，时分秒</span><br><span class="line">datetime.date(<span class="number">2018</span>,<span class="number">6</span>,<span class="number">6</span>) 创建年月日</span><br><span class="line">datetime.time(<span class="number">10</span>,<span class="number">50</span>,<span class="number">59</span>) 创建时分秒</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">关于这些返回值，我们都可以通过它的内置属性：</span><br><span class="line">res.year 年</span><br><span class="line">res.month 月</span><br><span class="line">res.day 日</span><br><span class="line">res.hour 时</span><br><span class="line">res.minute 分</span><br><span class="line">res.second 秒</span><br><span class="line">res.weekday() 从0开始表示星期几</span><br><span class="line">res.ctime() 返回时间字符串(国际化处理过的)</span><br><span class="line">res.timetuple() 一个时间元组 </span><br><span class="line">和time.localtime() 所获取到的返回值是一样的</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:zhaocs.github.io">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2018/07/24/异常捕获/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/运算符操作符/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/装饰器/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/csv文件操作/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/Python3_基础语法/"></a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2018 豆芽菜
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+</body>
+</html>

@@ -63,7 +63,7 @@
     <header>
       
         <div class="icon"></div>
-        <time datetime="2018-07-24T04:58:41.907Z"><a href="/2018/07/24/OS模块/">2018-07-24</a></time>
+        <time datetime="2018-07-24T06:52:53.927Z"><a href="/2018/07/24/闭包/">2018-07-24</a></time>
       
       
   
@@ -73,24 +73,33 @@
     </header>
     <div class="entry">
       
-        <h1 id="OS模块"><a href="#OS模块" class="headerlink" title="OS模块"></a>OS模块</h1><blockquote>
-<p>模块如果并非是当前标准环境下的</p>
-<p>所以需要用import 的方式进行导入</p>
-<p>与当前操作系统进行交互</p>
-<p>删除，创建文件及文件夹、获取目录，获取文件夹结构、</p>
-</blockquote>
+        <h1 id="HEXO"><a href="#HEXO" class="headerlink" title="HEXO"></a>HEXO</h1><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo：nodejs 静态博客框架</span><br><span class="line"><span class="number">1</span>：去github创建一个私有空间</span><br><span class="line"><span class="number">2</span>：nuohu.github.io</span><br><span class="line"><span class="number">3</span>：md语法 每一个博客页面都是一个md语法的文件</span><br></pre></td></tr></table></figure>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>实现闭包：</p>
 <ul>
-<li><p>os模块的第一个函数</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">os.system(<span class="string">'command'</span>)</span><br><span class="line"><span class="comment">#command一定是当前shell所支持</span></span><br><span class="line"><span class="comment">#这个函数只是会运行，并不能获取到命令运行之后的结果</span></span><br><span class="line"><span class="comment">#经常使用它来运行一些与输出没关系的命令</span></span><br><span class="line"><span class="comment">#cp 拷贝一个文件 mv 重命名文件 </span></span><br><span class="line"><span class="comment">#rm -rf / 删除所有文件</span></span><br><span class="line"><span class="comment">#del *.*   </span></span><br><span class="line"><span class="comment">#dd if=/dev/zero of=1 用zero来创建1</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">linux下在dev目录下有一个null文件，这个文件是一个黑洞，</span><br><span class="line">/dev/null 黑洞文件</span><br><span class="line">touch 创建一个文件</span><br><span class="line">cat 查看文件内容</span><br><span class="line">vi 编辑 先按a 然后就可以写文件了 然后写完之后 按ESC 再按shift+: 然后输入wq 回车就可以保存了</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#windows关机脚本</span><br><span class="line">import os</span><br><span class="line">os.system(&apos;shutdown -s -t 1&apos;)</span><br></pre></td></tr></table></figure>
+<li><p>1: 你要先来一个函数嵌套</p>
 <ul>
-<li>os.system函数可以执行或者打开对应操作系统下的程序根据你输入的命令</li>
+<li>外函数里包装一个内函数</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">语音控制你的电脑</span><br></pre></td></tr></table></figure>
 </li>
+<li>2: 外函数作用域有一个局部数据对象</li>
+<li>3: 内部函数对于外部函数作用域里非全局变量的引用</li>
+<li>4: 外函数返回内部函数</li>
 </ul>
-<h1 id="Pyinstaller-用来将程序编译为可执行的二进制"><a href="#Pyinstaller-用来将程序编译为可执行的二进制" class="headerlink" title="Pyinstaller 用来将程序编译为可执行的二进制"></a>Pyinstaller 用来将程序编译为可执行的二进制</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">写完了程序封装成exe的</span><br><span class="line">这样别人没有Python，也可以使用</span><br><span class="line">rpmbuild linux下面的安装软件命令</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1: 闭包内部创建载体，可以使一个局部变量续命</p>
+</blockquote>
+<blockquote>
+<p>2:变量私有化：<br>每一次闭包函数执行后的返回值都是一个新的，这是因为函数运行首先开辟的都是一块新的函数临时空间<br>每一次闭包函数执行后，都是返回了一个不一样的闭包函数载体，那么这个载体里的变量，也是不一样的</p>
+</blockquote>
+<blockquote>
+<p>3: 变量状态维持：<br>闭包函数载体(返回值)，只要存活着，那么它其中的变量也将会一直维护者</p>
+</blockquote>
+<blockquote>
+<p>4: 闭包会一直保存变量，所以呢，本该死去的局部变量现在无法及时得到释放。消耗内存</p>
+</blockquote>
+<p>思考题：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1:那闭包可以不可以给一个形参 续命呢？</span><br><span class="line">2:那如果形参接收的是一个函数呢？</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#3:在函数运行前添加功能，不影响原有代码?</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(arg)</span>:</span></span><br><span class="line">	print(<span class="string">'嘿嘿嘿嘿'</span>)</span><br><span class="line">	<span class="keyword">return</span> arg()</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">work</span><span class="params">()</span>:</span></span><br><span class="line">	print(<span class="string">'哈哈哈哈'</span>)</span><br><span class="line">func(work)</span><br></pre></td></tr></table></figure>
 
       
     </div>

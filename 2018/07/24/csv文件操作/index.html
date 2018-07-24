@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8" />
+  
+  <title>豆芽菜的爱的博客</title>
+  <meta name="author" content="豆芽菜" />
+
+  
+  <meta name="description" content="男人可以不帅，但是不能不装逼，装逼很重要" />
+  
+
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+  
+  <meta property="og:site_name" content="豆芽菜的爱的博客" />
+
+  
+  
+
+  
+    <meta property="og:image" content="" />
+  
+
+  
+  <link href="/css/images/favicon.ico" rel="icon" />
+  
+
+  <link rel="alternate" href="/atom.xml" title="豆芽菜的爱的博客" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+
+
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+
+</head>
+
+
+<body>
+  <header id="header" class="inner"><div class="alignleft">
+  <h1><a href="/">豆芽菜的爱的博客</a></h1>
+  <h2><a href="/">新进菜鸟一个</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2018-07-24T06:52:54.030Z"><a href="/2018/07/24/csv文件操作/">2018-07-24</a></time>
+      
+      
+  
+    <h1 class="title"></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <h1 id="CSV文件"><a href="#CSV文件" class="headerlink" title="CSV文件"></a>CSV文件</h1><ul>
+<li><p>关于for循环访问文件对象</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fp = open(<span class="string">'1.txt|1.csv'</span>,<span class="string">'r'</span>)</span><br><span class="line"><span class="keyword">for</span> var <span class="keyword">in</span> fp:</span><br><span class="line">	<span class="comment">#此时的var就是文件中一行行数据</span></span><br><span class="line">	<span class="comment">#for循环每一次读一行</span></span><br><span class="line">	print(var)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>CSV文件是一个用于电子表格存储类型</p>
+</li>
+<li><p>csv文件是存储了以逗号分隔的数据</p>
+<ul>
+<li>[‘a’,’b’,’c’]</li>
+<li>(‘a’,’b’,’c’)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>: 处理普通文本对象为csv文本对象</span><br><span class="line">	打开文件：</span><br><span class="line">		fp = open(path,mode)</span><br><span class="line">	加工：</span><br><span class="line">		csv_read_fp = csv.reader(fp)  负责读取</span><br><span class="line">		csv_write_fp = csv.writer(fp) 负责写入</span><br><span class="line"><span class="number">2</span>: 对csv_read_fp进行<span class="keyword">for</span>循环迭代，就可以一行行的访问csv表格中的内容</span><br><span class="line">	<span class="keyword">for</span> var <span class="keyword">in</span> csv_read_fp:</span><br><span class="line">		pass</span><br><span class="line"><span class="number">3</span>: 对csv_write_fp文件写入内容，写入的是一些逗号分隔开的数据</span><br><span class="line">	csv_write_fp.wirterow([seq])</span><br></pre></td></tr></table></figure>
+<h3 id="csv文件默认写入的时候-会在每两行之间多一个空行"><a href="#csv文件默认写入的时候-会在每两行之间多一个空行" class="headerlink" title="csv文件默认写入的时候 会在每两行之间多一个空行"></a>csv文件默认写入的时候 会在每两行之间多一个空行</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">解决办法：</span><br><span class="line">在打开文件的时候</span><br><span class="line">fp = open(<span class="string">'1.csv'</span>,<span class="string">'w'</span>,newline=<span class="string">''</span>)</span><br><span class="line"><span class="comment">#newline参数用来控制 每一次写入csv文件数据的时候，一行行之间是否需要空行</span></span><br></pre></td></tr></table></figure>
+<h3 id="字典格式阅读csv文件"><a href="#字典格式阅读csv文件" class="headerlink" title="字典格式阅读csv文件"></a>字典格式阅读csv文件</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">字典读取时：</span><br><span class="line">	dict_read_csv = csv.DictReader(fp)</span><br><span class="line">	<span class="keyword">for</span> var <span class="keyword">in</span> dict_read_csv:</span><br><span class="line">		print(var[<span class="string">'name'</span>],var[<span class="string">'sex'</span>])</span><br><span class="line">csv文件中第一行是key值，下面的数据是value</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">字典写一个csv文件</span><br><span class="line">	dict_write_csv = csv.DictWriter(fp,fileds)</span><br><span class="line">		fp: </span><br><span class="line">			打开的文件对象，需要加工成csv字典处理文件对象</span><br><span class="line">		fileds： 标题行 第一行</span><br><span class="line">			fileds 也是一个逗号分隔的数据 比如: fileds = [<span class="string">'name'</span>,<span class="string">'age'</span>,<span class="string">'sex'</span>]</span><br><span class="line">		</span><br><span class="line">	dict_write_csv.writeheader() <span class="comment">#将指定的标题行先写入到csv文件里</span></span><br><span class="line">	dict_write_csv.writerow(&#123;<span class="string">'name'</span>:<span class="string">'BOB'</span>,<span class="string">'age'</span>:<span class="string">'16'</span>,<span class="string">'sex'</span>:<span class="string">'man'</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:zhaocs.github.io">
+  </form>
+</div>
+
+  
+
+  
+<div class="widget tag">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2018/07/24/异常捕获/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/运算符操作符/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/装饰器/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/csv文件操作/"></a>
+      </li>
+    
+      <li>
+        <a href="/2018/07/24/Python3_基础语法/"></a>
+      </li>
+    
+  </ul>
+</div>
+
+
+  
+
+  
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><div class="alignleft">
+  <p>
+  
+  &copy; 2018 豆芽菜
+  
+  All rights reserved.</p>
+  <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</div>
+<div class="clearfix"></div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id='bg'></div>
+</body>
+</html>
